@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$('.drawer').drawer({
+	var abc = $('.drawer').drawer({
 		  class: {
 		    nav: 'drawer-nav',
 		    toggle: 'drawer-toggle',
@@ -9,10 +9,9 @@ $(document).ready(function() {
 		    dropdown: 'drawer-dropdown'
 		  },
 		  iscroll: {
-		    // Configuring the iScroll
-		    // https://github.com/cubiq/iscroll#configuring-the-iscroll
 		    mouseWheel: true,
-		    preventDefault: false
+		    preventDefault: false,
+		    disableTouch: false
 		  },
 		  showOverlay: true
 		});
