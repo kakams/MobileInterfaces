@@ -1,0 +1,152 @@
+[
+   {"id": 1, "name": "Elektronika",
+	"childrens": [
+		{"id": 11, "name": "RTV",  "parentID": 1, 
+		  "childrens": [
+				{"id": 111, "name": "TV",  "parentID": 11},
+				{"id": 112, "name": "Video",  "parentID": 11},
+				{"id": 113, "name": "Audio",  "parentID": 11}
+		  ]
+		},
+		{"id": 12, "name": "AGD",  "parentID": 1, 
+		  "childrens": [
+				{"id": 121, "name": "Zmywarki",  "parentID": 12},
+				{"id": 122, "name": "Lodówki",  "parentID": 12},
+				{"id": 123, "name": "Kuchenki",  "parentID": 12}
+		  ]
+		},
+		{"id": 13, "name": "Komputery",  "parentID": 1, 
+		  "childrens": [
+				{"id": 131, "name": "Komputery stacjonarne",  "parentID": 13},
+				{"id": 132, "name": "Laptopy",  "parentID": 13},
+				{"id": 133, "name": "Monitory",  "parentID": 13}
+		  ]
+		}
+	]
+   },
+   {"id": 2, "name": "Moda", 
+	"childrens": [
+		{"id": 21, "name": "Męska",  "parentID": 2, 
+		  "childrens": [
+				{"id": 211, "name": "Spodnie",  "parentID": 21},
+				{"id": 212, "name": "Koszule i koszulki",  "parentID": 21},
+				{"id": 213, "name": "Bluzy",  "parentID": 21}
+		  ]
+		},
+		{"id": 22, "name": "Damska",  "parentID": 2, 
+		  "childrens": [
+				{"id": 221, "name": "Spódnice",  "parentID": 22},
+				{"id": 222, "name": "Bluzki",  "parentID": 22},
+				{"id": 223, "name": "Spodnie",  "parentID": 22}
+		  ]
+		},
+		{"id": 23, "name": "Dziecięca",  "parentID": 2, 
+		  "childrens": [
+				{"id": 231, "name": "Spodnie",  "parentID": 23},
+				{"id": 232, "name": "Bluzy",  "parentID": 23},
+				{"id": 233, "name": "Buty",  "parentID": 23}
+		  ]
+		}
+	]
+   },
+   {"id": 3, "name": "Dom", 
+	"childrens": [
+		{"id": 31, "name": "Meble",  "parentID": 3, 
+		  "childrens": [
+				{"id": 311, "name": "Sypialnia",  "parentID": 31},
+				{"id": 312, "name": "Kuchnia",  "parentID": 31},
+				{"id": 313, "name": "Salon",  "parentID": 31}
+		  ]
+		},
+		{"id": 32, "name": "Budownictwo",  "parentID": 3, 
+		  "childrens": [
+				{"id": 321, "name": "Drzwi",  "parentID": 32},
+				{"id": 322, "name": "Farby",  "parentID": 32},
+				{"id": 323, "name": "Podłogi",  "parentID": 32}
+		  ]
+		},
+		{"id": 33, "name": "Ogród",  "parentID": 3, 
+		  "childrens": [
+				{"id": 331, "name": "Grill",  "parentID": 33},
+				{"id": 332, "name": "Narzędzia",  "parentID": 33},
+				{"id": 333, "name": "Sadzonki",  "parentID": 33}
+		  ]
+		}
+	]
+   },
+   {"id": 4, "name": "Sport", 
+	"childrens": [
+		{"id": 41, "name": "Siłownia",  "parentID": 4, 
+		  "childrens": [
+				{"id": 411, "name": "Ciężary",  "parentID": 41},
+				{"id": 412, "name": "Atlasy",  "parentID": 41},
+				{"id": 413, "name": "Akcesoria",  "parentID": 41}
+		  ]
+		},
+		{"id": 42, "name": "Rowery",  "parentID": 4, 
+		  "childrens": [
+				{"id": 421, "name": "Górskie",  "parentID": 42},
+				{"id": 422, "name": "Szosowe",  "parentID": 42},
+				{"id": 423, "name": "Dla dzieci",  "parentID": 42}
+		  ]
+		},
+		{"id": 43, "name": "Inne",  "parentID": 4, 
+		  "childrens": [
+				{"id": 431, "name": "Koszykówka",  "parentID": 43},
+				{"id": 432, "name": "Piłka nożna",  "parentID": 43},
+				{"id": 433, "name": "Hokej",  "parentID": 43}
+		  ]
+		}
+	]
+   },
+   {"id": 5, "name": "Motoryzacja", 
+	"childrens": [
+		{"id": 51, "name": "Samochody",  "parentID": 5, 
+		  "childrens": [
+				{"id": 511, "name": "Osobowe",  "parentID": 51},
+				{"id": 512, "name": "Transportowe",  "parentID": 51},
+				{"id": 513, "name": "Części",  "parentID": 51}
+		  ]
+		},
+		{"id": 52, "name": "Motocykle",  "parentID": 5, 
+		  "childrens": [
+				{"id": 521, "name": "Sportowe",  "parentID": 52},
+				{"id": 522, "name": "Cross",  "parentID": 52},
+				{"id": 523, "name": "Chopper",  "parentID": 52}
+		  ]
+		},
+		{"id": 53, "name": "Maszyny rolnicze",  "parentID": 5, 
+		  "childrens": [
+				{"id": 531, "name": "Traktory",  "parentID": 53},
+				{"id": 532, "name": "Naczepy",  "parentID": 53},
+				{"id": 533, "name": "Inne",  "parentID": 53}
+		  ]
+		}
+	]
+   },
+   {"id": 6, "name": "Kultura", 
+	"childrens": [
+		{"id": 61, "name": "Film",  "parentID": 6, 
+		  "childrens": [
+				{"id": 611, "name": "Akcji",  "parentID": 61},
+				{"id": 612, "name": "Romantyczne",  "parentID": 61},
+				{"id": 613, "name": "Komedie",  "parentID": 61}
+		  ]
+		},
+		{"id": 62, "name": "Muzyka",  "parentID": 6, 
+		  "childrens": [
+				{"id": 621, "name": "Rock",  "parentID": 62},
+				{"id": 622, "name": "Rap",  "parentID": 62},
+				{"id": 623, "name": "Pop",  "parentID": 62}
+		  ]
+		},
+		{"id": 63, "name": "Książki",  "parentID": 6, 
+		  "childrens": [
+				{"id": 631, "name": "Kryminał",  "parentID": 63},
+				{"id": 632, "name": "Horror",  "parentID": 63},
+				{"id": 633, "name": "Naukowe",  "parentID": 63}
+		  ]
+		}
+	]
+   }
+]
