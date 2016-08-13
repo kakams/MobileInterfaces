@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mainApp" class="no-js" resize>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Right hand UI</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="../../css/normalize.css">
+  <link rel="stylesheet" href="../../css/main.css">
+  
+  <script src="../../js/vendor/modernizr-2.8.3.min.js"></script>
+  
+   <script src="../../js/vendor/jquery-1.12.0.min.js"></script>
+  <script>window.jQuery || document.write('<script src="../../js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  
+ <script src="../../js/plugins.js"></script>
+  
+  <script src="js/main.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="bottom_bar" >
+  <div id="site_conteiner">
+	  <header>
+		  <a href="#" id="cart"> <img src="../../img/cart.png" alt="" /> </a>
+		  <a href="#" id="logo"> <img src="../../img/logo.png" alt="" /> </a>
+	  </header>
+	  <main id="site_content" role="main">
+	  
+		  <div id="baner">
+		  </div>
+		  
+		  <div id="promocje">
+		  </div>
+		  
+		  <div id="polecane">
+		  </div>
+		  
+	  </main>
+	  
+	  <footer>
+	 	 <ul>
+	  		<li><a href="#">O nas</a></li>
+	  		<li><a href="#">Kontakt</a></li>
+	  		<li><a href="#">FAQ</a></li>
+	  		<li><a href="#">Dostawa</a></li>
+	  	</ul>
+	  </footer>
+	</div>
+  	<div id="menu" ng-controller="MenuController as menu">
+  		<div id="overlay"></div>
+	 	 <ul id="css_menu{{$index}}" class="css_menu" ng-style="getUlStyle($index)" 
+	 	 	 ng-repeat="singleMenu in menuItems track by $index" >
+	  		<li ng-style="getLiStyle($index, singleMenu.length,$parent.$index, menuSize)"
+	  		    ng-repeat="item in singleMenu">
+	  			
+	  			<span ng-style="getSpanStyle($index, singleMenu.length, $parent.$index, menuSize)" 
+	  				  ng-click="getMenuItems(item.id)">
+	  					{{item.name}}
+	  			</span>
+	  		
+	  		</li>
+	  	</ul>
+	  	<div id="menu_button_bg" ng-style="getMenuButtonBGStyle(menuSize)">
+	  	</div>
+	  	
+	  	<div id="menu_button" ng-style="getMenuButtonStyle(menuSize)">
+	  		menu
+	  	</div>
+	  	
+  	</div>
+  	
+  <script type="text/javascript" src="js/app.js"></script>
+  
+
+</body>
+</html>
