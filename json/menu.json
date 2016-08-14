@@ -17,7 +17,7 @@
 		},
 		{"id": 13, "name": "Komputery",  "parentID": 1, 
 		  "childrens": [
-				{"id": 131, "name": "Komputery stacjonarne",  "parentID": 13},
+				{"id": 131, "name": "Stacjonarne",  "parentID": 13},
 				{"id": 132, "name": "Laptopy",  "parentID": 13},
 				{"id": 133, "name": "Monitory",  "parentID": 13}
 		  ]
@@ -29,7 +29,7 @@
 		{"id": 21, "name": "Męska",  "parentID": 2, 
 		  "childrens": [
 				{"id": 211, "name": "Spodnie",  "parentID": 21},
-				{"id": 212, "name": "Koszule i koszulki",  "parentID": 21},
+				{"id": 212, "name": "Koszulki",  "parentID": 21},
 				{"id": 213, "name": "Bluzy",  "parentID": 21}
 		  ]
 		},
@@ -79,7 +79,7 @@
 		{"id": 41, "name": "Siłownia",  "parentID": 4, 
 		  "childrens": [
 				{"id": 411, "name": "Ciężary",  "parentID": 41},
-				{"id": 412, "name": "Atlasy",  "parentID": 41},
+				{"id": 412, "name": "Maszyny",  "parentID": 41},
 				{"id": 413, "name": "Akcesoria",  "parentID": 41}
 		  ]
 		},
@@ -87,7 +87,7 @@
 		  "childrens": [
 				{"id": 421, "name": "Górskie",  "parentID": 42},
 				{"id": 422, "name": "Szosowe",  "parentID": 42},
-				{"id": 423, "name": "Dla dzieci",  "parentID": 42}
+				{"id": 423, "name": "Dziecięce",  "parentID": 42}
 		  ]
 		},
 		{"id": 43, "name": "Inne",  "parentID": 4, 
@@ -99,7 +99,7 @@
 		}
 	]
    },
-   {"id": 5, "name": "Motoryzacja", 
+   {"id": 5, "name": "Moto", 
 	"childrens": [
 		{"id": 51, "name": "Samochody",  "parentID": 5, 
 		  "childrens": [
@@ -129,7 +129,7 @@
 		{"id": 61, "name": "Film",  "parentID": 6, 
 		  "childrens": [
 				{"id": 611, "name": "Akcji",  "parentID": 61},
-				{"id": 612, "name": "Romantyczne",  "parentID": 61},
+				{"id": 612, "name": "Romans",  "parentID": 61},
 				{"id": 613, "name": "Komedie",  "parentID": 61}
 		  ]
 		},

@@ -16,6 +16,10 @@ body{
 	background: #fff;
 	height: 100%
 }
+#expander{
+	height:200px;
+	display:block;
+}
 header{
 	display: table;
 	width: 100%;

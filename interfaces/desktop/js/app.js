@@ -1,12 +1,23 @@
-var menuApp = angular.module('menuApp', []);
+var app = angular.module('mobileInterfaces', []);
 
-menuApp.controller("menuAppCtrl", function($scope) {
-    $scope.menu ="";
-    
-    function getMenuFromJSON($scope, $http) {
-        $http({method: 'POST', url: '../../json/menu.json'}).success(function(data) {
-          $scope.menu = data; 
-        });
-    };
-    
-});
+  app.factory('menufactory', function ($http, $q){   
+	    this.getlist = function(){            
+	        return $http({method: 'GET', url: '../../../json/menu.json'}).success(function(json) {
+		    	return json;
+		    });
+	    }
+	    return this;
+  });
+  
+  
+  app.controller('MenuController', function($scope, menufactory) {
+	$scope.menuData = [];
+	
+	
+
+    menufactory.getlist().then(function(json){
+       $scope.menuData = json.data;
+    });
+  
+  });
+  

@@ -57,9 +57,13 @@
 	</div>
   
 	<nav id="navigation" role="navigation" ng-controller="MenuController as menu">
-		<div class="tab" ng-show="backID >= 0" ng-click="getMenuItems(backID)"><div>Back</div></div>
+		<div class="tab" ng-show="backID >= 0" ng-click="getMenuItems(backID)">
+			<img ng-src="../../img/menu_icons/back.png" class="menu_img" />
+			<span>Back</span>
+		</div>
 		<div class="tab" ng-repeat="item in menuItems" ng-click="getMenuItems(item.id)">
-			<div>{{item.name}}</div>
+	  		<img ng-src="../../img/menu_icons/{{item.id}}.png" class="menu_img" />
+			<span>{{item.name}}</span>
 		</div>
 	</nav>
   <script type="text/javascript" src="js/app.js"></script>

@@ -119,14 +119,32 @@ header a#logo{
     overflow: hidden;
     border:none;
 }
-#menu .css_menu li span{
-    display: block;
-    font-size: 0.7em;
+#menu .css_menu li > span{
+    display: table;
     position: absolute;
     text-decoration: none;
     color: white;
     border-radius: 100%;
     text-align: center;
+}
+.item_menu{
+    display: table;
+    margin: 0 auto;
+}
+.item_menu_content{
+	display:table-cell;
+	vertical-align:middle;
+	text-align:center;
+}
+.menu_img{
+	max-height:20%;
+	max-width: 100%;
+}
+.item_name{
+    font-size: 10px;
+    width:100%;
+    overflow:hidden;
+	
 }
 #menu #css_menu0 li span{
     background-color: #464646;
@@ -166,7 +184,6 @@ header a#logo{
 #navigation .tab:last-of-type{
 	border-right:1px none;
 }
-
 footer{
 	display: table-footer-group;
 	width: 100%;

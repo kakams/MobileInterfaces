@@ -1,4 +1,4 @@
-var app = angular.module('mainApp', []);
+var app = angular.module('mobileInterfaces', []);
 
   app.factory('menufactory', function ($http, $q){   
 	    this.getlist = function(){            
@@ -69,6 +69,22 @@ var app = angular.module('mainApp', []);
 		return { 
 			width: size+"px",
 			height: size+"px"
+		}
+	}
+	$scope.getMenuItemStyle = function(stepIndex, menuLength){
+		var step = $scope.menuSize/4;
+		var size = $scope.menuSize - (stepIndex+1)*step;
+		var width = ((Math.PI*size)/2) /(menuLength);
+		
+		return { 
+			width: width+"px",
+			height: step+"px"
+		}
+	}
+	$scope.getMenuItemSpanStyle = function(){
+		var step = $scope.menuSize/4;
+		return {
+			"padding-top":step*0.05+"px"
 		}
 	}
 	$scope.getSpanStyle = function(index, length, stepIndex, menuSize){

@@ -1,9 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="mainApp" class="no-js" resize>
+<!--[if lt IE 7]>      <html lang="en" ng-app="mobileInterfaces" class="no-js lt-ie9 lt-ie8 lt-ie7" resize> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="mobileInterfaces" class="no-js lt-ie9 lt-ie8" resize> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="mobileInterfaces" class="no-js lt-ie9" resize> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="mobileInterfaces" class="no-js" resize> <!--<![endif]-->
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Right hand UI</title>
+  <title>Wachlarz UI</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -24,7 +28,7 @@
   <script src="js/main.js"></script>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body id="bottom_bar" >
+<body id="wachlarz" >
   <div id="site_conteiner">
 	  <header>
 		  <a href="#" id="cart"> <img src="../../img/cart.png" alt="" /> </a>
@@ -61,7 +65,12 @@
 	  			
 	  			<span ng-style="getSpanStyle($index, singleMenu.length, $parent.$index, menuSize)" 
 	  				  ng-click="getMenuItems(item.id)">
-	  					{{item.name}}
+  				  		<div class="item_menu" ng-style="getMenuItemStyle($parent.$index, singleMenu.length)">
+	  				  		<div class="item_menu_content">
+		  				  		<img ng-src="../../img/menu_icons/{{item.id}}.png" class="menu_img" />
+			  					<div class="item_name" ng-style="getMenuItemSpanStyle()"><span>{{item.name}}</span></div>
+		  					</div>
+	  					</div>
 	  			</span>
 	  		
 	  		</li>

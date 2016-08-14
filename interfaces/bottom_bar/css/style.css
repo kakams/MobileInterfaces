@@ -84,6 +84,15 @@ header a#logo{
 	padding-left:5px;
 	padding-right:5px;
 }
+#navigation .tab .menu_img{
+	height:40%;
+	max-width:90%;
+}
+#navigation .tab span{
+	display:inline-block;
+	width:100%;
+	padding-top:5px;
+}
 #navigation .tab:last-of-type{
 	border-right:1px none;
 }

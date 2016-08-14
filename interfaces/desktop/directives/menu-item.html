@@ -1,0 +1,11 @@
+{{item.name}}
+<ul>
+	<li ng-repeat="children in item.childrens">{{children.name}}
+		<ul>
+			<li ng-repeat="lastChildren in children.childrens">
+				<a href="#{{lastChildren.id}}">{{lastChildren.name}}</a>
+			</li>
+		</ul>
+	</li>
+	
+</ul>
