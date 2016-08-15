@@ -11,8 +11,8 @@
 		{"id": 12, "name": "AGD",  "parentID": 1, 
 		  "childrens": [
 				{"id": 121, "name": "Zmywarki",  "parentID": 12},
-				{"id": 122, "name": "Lodówki",  "parentID": 12},
-				{"id": 123, "name": "Kuchenki",  "parentID": 12}
+				{"id": 122, "name": "Pralki",  "parentID": 12},
+				{"id": 123, "name": "Lodówki",  "parentID": 12}
 		  ]
 		},
 		{"id": 13, "name": "Komputery",  "parentID": 1, 
@@ -54,7 +54,7 @@
 		{"id": 31, "name": "Meble",  "parentID": 3, 
 		  "childrens": [
 				{"id": 311, "name": "Sypialnia",  "parentID": 31},
-				{"id": 312, "name": "Kuchnia",  "parentID": 31},
+				{"id": 312, "name": "Jadalnia",  "parentID": 31},
 				{"id": 313, "name": "Salon",  "parentID": 31}
 		  ]
 		},

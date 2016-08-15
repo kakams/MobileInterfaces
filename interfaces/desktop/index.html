@@ -19,11 +19,11 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body id="desktop">
-  <div id="site_conteiner">
+  <div id="site_conteiner" ng-controller="SiteController as siteCtrl">
 	  <header>
 	  <a href="#" id="cart"> <img src="../../img/cart.png" alt="" /> </a>
 	  <a href="#" id="logo"> <img src="../../img/logo.png" alt="" /> </a>
-	  <nav ng-controller="MenuController as menu">
+	  <nav>
 	  	<ul>
 		  	<li ng-repeat="item in menuData" ng-include="'directives/menu-item.html'">
 		  	</li>
@@ -32,7 +32,12 @@
 	  </header>
 	  
 	  <div id="site_content">
-	  
+	  	
+	  	  <div id="productList">
+	  	  	<div class="productElem" ng-repeat="item in productData">
+	  	  		{{item}}
+	  	  	</div>
+	  	  </div>
 		  <div id="baner">
 		  </div>
 		  

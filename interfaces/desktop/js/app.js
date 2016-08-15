@@ -8,16 +8,27 @@ var app = angular.module('mobileInterfaces', []);
 	    }
 	    return this;
   });
-  
-  
-  app.controller('MenuController', function($scope, menufactory) {
-	$scope.menuData = [];
-	
-	
 
+
+  
+  app.controller('SiteController', function($scope, $http, menufactory) {
+	$scope.menuData = [];
+	$scope.productData = [];
+	
+	
+	$scope.getProductList = function (categoryId){   
+		$http({method: 'GET', url: '../../../services/getProductsList.php?catId='+categoryId}).success(function(json) {
+    		console.log(json);
+			$scope.productData = json;
+	    });
+    };
+    
     menufactory.getlist().then(function(json){
        $scope.menuData = json.data;
     });
   
   });
+  
+
+		
   
