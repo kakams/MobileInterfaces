@@ -31,13 +31,7 @@
 	  </nav>
 	  </header>
 	  
-	  <div id="site_content">
-	  	
-	  	  <div id="productList">
-	  	  	<div class="productElem" ng-repeat="item in productData">
-	  	  		{{item}}
-	  	  	</div>
-	  	  </div>
+	  <div id="site_content" ng-hide="productData.length > 0">
 		  <div id="baner">
 		  </div>
 		  
@@ -47,6 +41,18 @@
 		  <div id="polecane">
 		  </div>
 		  
+	  </div>
+	  <div id="product_list" ng-show="productData.length > 0">
+	  	  	<div class="product_elem" ng-repeat="item in productData">
+	  	  		<div class="product_img">
+		  	  		<img ng-src="../../img/products/{{item.categoryId}}/{{item.imageId}}.jpg" alt="{{item.name}}" />
+	  	  		</div>
+	  	  		<div class="product_content">
+	  	  			<div class="product_title">{{item.name}}</div>
+	  	  			<div class="product_price">{{item.price}}</div>
+	  	  			<div class="product_buttons"><div class="button">Dodaj do koszyka</div></div>
+	  	  		</div>
+	  	  	</div>
 	  </div>
 	  
 	  <footer>

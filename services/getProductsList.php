@@ -6,6 +6,8 @@ $conn = new mysqli("localhost", "20454239_1", "981235ka", "20454239_1");
 $catId = 0;
 if (isset($_GET['catId'])) {
     $catId = $_GET['catId'];
+	$conn -> query ('SET NAMES utf8');
+	$conn -> query ('SET CHARACTER_SET utf8_unicode_ci');
 	$result = $conn->query("SELECT * FROM  `Product` WHERE  `idCategory` = ".$catId." ORDER BY  `Product`.`idProdukt` ASC");
 
 	$outp = "";
@@ -15,7 +17,7 @@ if (isset($_GET['catId'])) {
 		$outp .= '"name":"'   . $rs["name"]        . '",';
 		$outp .= '"description":"'   . $rs["description"]        . '",';
 		$outp .= '"price":"'   . $rs["price"]        . '",';
-		$outp .= '"idCategory":"'   . $rs["idCategory"]        . '",';
+		$outp .= '"categoryId":"'   . $rs["idCategory"]        . '",';
 		$outp .= '"isPromotion":"'   . $rs["isPromotion"]        . '",';
 		$outp .= '"imageId":"'. $rs["imageId"]     . '"}'; 
 	}
