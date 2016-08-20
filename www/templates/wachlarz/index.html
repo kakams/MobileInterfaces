@@ -1,0 +1,60 @@
+<div id="site_conteiner_wachlarz">
+	  <header>
+		  <div id="logo" ng-click="productData = []"> <img src="../../img/logo_biale.png" alt="" /> </div>
+	  </header>
+	  <div id="main_site_content" role="main" ng-hide="productData.length > 0">
+	  
+		  <div id="baner">
+		 	 <img src="../../img/baner.png" />
+		  </div>
+		  
+		  <div id="promocje">
+		  </div>
+		  
+		  <div id="polecane">
+		  </div>
+		  
+	  </div>
+	  <div id="product_list" ng-show="productData.length > 0" ng-include="'../../include_components/product-item.html'">
+	  </div>
+	  
+	  <footer>
+	 	 <ul>
+	  		<li><a href="#">O nas</a></li>
+	  		<li><a href="#">Kontakt</a></li>
+	  		<li><a href="#">FAQ</a></li>
+	  		<li><a href="#">Dostawa</a></li>
+	  	</ul>
+	  </footer>
+	</div>
+  	<div id="menu_wachlarz">
+  		<div id="overlay"></div>
+	 	 <ul id="css_menu{{$index}}" class="css_menu" ng-style="getUlStyle($index)" 
+	 	 	 ng-repeat="singleMenu in menuItems track by $index" >
+	  		<li ng-style="getLiStyle($index, singleMenu.length,$parent.$index, menuSize)"
+	  		    ng-repeat="item in singleMenu">
+	  			
+	  			<span ng-style="getSpanStyle($index, singleMenu.length, $parent.$index, menuSize)" 
+	  				  ng-click="getMenuItems(item.id)">
+  				  		<div class="item_menu" ng-style="getMenuItemStyle($parent.$index, singleMenu.length)">
+	  				  		<div class="item_menu_content">
+		  				  		<img ng-src="../../img/menu_icons/{{item.id}}.png" class="menu_img" />
+			  					<div class="item_name" ng-style="getMenuItemSpanStyle()"><span>{{item.name}}</span></div>
+		  					</div>
+	  					</div>
+	  			</span>
+	  		
+	  		</li>
+	  	</ul>
+	  	<div id="menu_button_bg" ng-style="getMenuButtonBGStyle(menuSize)">
+	  	</div>
+	  	
+	  	<div id="menu_button" ng-style="getMenuButtonStyle(menuSize)">
+		  	<div id="button_conent">
+		  	<img src="../../img/hamburger_ico.png" />
+	  		<span>menu</span>
+	  		</div>
+	  	</div>
+	  	
+  	</div>
+  	

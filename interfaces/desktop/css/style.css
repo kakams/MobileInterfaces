@@ -1,6 +1,7 @@
 body,html{
 	height: 100%;
 	width: 100%;
+	display:table;
 }
 .bold{
 	font-weight: bold;
@@ -67,22 +68,26 @@ header nav > ul > li{
     vertical-align: middle;
     text-align: center;
     color: #3d3d3d;
+    font-size: 23px;
+    line-height: 40px;
+    font-family: 'Kanit', sans-serif;
+    font-weight:200;
+    cursor:pointer;
 }
 header nav > ul > li:hover{
 	color: #fff;
-	background: #3d3d3d;
+	background: #e59119;
 }
 header nav > ul > li:hover > ul{
     display: table;
     table-layout: fixed;
     width: 100%;
-    background: #fff;
+    background-color: rgba(231,156,24,0.95);
     position: absolute;
     left: 0;
     top: 39px;
     padding-top: 30px;
     padding-bottom: 30px;
-    border:1px solid #3d3d3d;
 }
 header nav > ul > li:last-of-type{
 	border-right: 0;
@@ -94,8 +99,9 @@ header nav > ul > li:hover > ul > li{
     padding-right: 30px;
     text-align: left;
     font-size: 22px;
-    border-right: 1px solid #fff;
-    color: #3d3d3d;
+    border-right: 1px solid rgba(255, 255, 255, 0.21);
+    color: #ffffff;
+    font-weight:200;
 }
 header nav > ul > li:hover > ul > li:last-of-type{
     border-right:0;
@@ -105,48 +111,54 @@ header nav > ul > li:hover > ul > li > ul{
     display: table;
 }
 header nav > ul > li:hover > ul > li > ul > li{
-    padding-left: 20px;
-}
-header nav > ul > li:hover > ul > li > ul > li a{
-    color: #3d3d3d;
+    padding-left: 30px;
     padding-top: 15px;
-    display: inline-block;
-    font-size: 16px;
+    font-weight:200;
+    cursor:pointer;
+    font-size: 21px;
+}
+#product_list{
+	margin-top:40px;
 }
 
-
-#site_content{
+#main_site_content{
 	display: table;
-	width: 100%;
+	width: 90%;
+	margin:0 auto;
 }
 #promocje, #polecane{
 	height: 400px;
 	background: #808080;
-	margin: 30px;
+	margin: 30px 0;
 }
 #baner{
 	width: 100%;
 	display: table;
-	height: 300px;
-	background: #3d0d0d;
-	margin-top:20px;
+    margin-top: 40px;
+}
+#baner img{
+	display:block;
+	width:100%;
 }
 
 
 footer{
 	display: table-footer-group;
 	width:100%;
-	height:50px;
-	background:#3d0d0d;
+	background:#e59119;
 	text-align:right;
 }
 footer ul{
+    display: table;
+    width: 1180px;
+    margin: 0 auto;
 	list-style-type:none;
-	display:inline-table;
-	text-align:center;
+	text-align:right;
 }
 footer ul li{
-    display: table-cell;
+    display: inline-block;
+	height:50px;
+	line-height:50px;
     padding: 0 20px;
     vertical-align: middle;
     text-align: center;

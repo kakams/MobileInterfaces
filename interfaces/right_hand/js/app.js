@@ -8,7 +8,13 @@ var app = angular.module('mobileInterfaces', []);
 	    }
 	    return this;
   });
-  
+
+  app.filter('price', function() {
+	    return function(value) {
+	        return parseFloat(value).toFixed(2);
+	    }
+  });
+	
   app.directive('resize', function ($window) {
 	    return function (scope, element) {
 	        var w = angular.element($window);
@@ -43,10 +49,16 @@ var app = angular.module('mobileInterfaces', []);
 	    }
   });
 	
-  app.controller('MenuController', function($scope, menufactory) {
+  app.controller('SiteController', function($scope,$http, menufactory) {
 	$scope.menuData = [];
 	$scope.menuItems = ['','',''];
+	$scope.productData = [];
 	
+	function getProductList(categoryId){   
+		$http({method: 'GET', url: '../../../services/getProductsList.php?catId='+categoryId}).success(function(json) {
+			$scope.productData = json;
+	    });
+    };
 	
 	$scope.getLiStyle = function(index, length, stepIndex, menuSize){
 		var startAngle = 0;
@@ -153,6 +165,9 @@ var app = angular.module('mobileInterfaces', []);
     	}
     	else if(hundreds === 0 && unity > 0 && decimal > 0 && decimal <= menuData.length && unity <= menuData[decimal-1].childrens.length){
     		$scope.menuItems[2] = menuData[decimal-1].childrens[unity-1].childrens;
+    	}
+    	else{
+    		getProductList(elementId);
     	}
     	
     };

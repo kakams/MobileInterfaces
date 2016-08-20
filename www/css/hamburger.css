@@ -1,0 +1,61 @@
+#site_conteiner_hamburger{
+	display: table;
+	width: 100%;
+	max-width: 1180px;
+	margin: 0 auto;
+	background: #fff;
+	height: 100%
+}
+#site_conteiner_hamburger #expander{
+	height:200px;
+	display:block;
+}
+#site_conteiner_hamburger header{
+	display: table;
+	width: 100%;
+	position: fixed;
+    background: #fff;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+}
+#site_conteiner_hamburger header #logo img{
+	max-width: 200px;
+}
+#site_conteiner_hamburger header #logo{
+	display: table;
+	margin: 0 auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+
+
+#site_conteiner_hamburger #main_site_content{
+	display: table;
+	width: 90%;
+	margin: 0 auto;
+	margin-top:60px;
+}
+#site_conteiner_hamburger #promocje, #site_conteiner_hamburger #polecane{
+	height: 400px;
+	background: #808080;
+	margin: 30px;
+}
+
+#site_conteiner_hamburger #baner{
+	width: 100%;
+	display: table;
+    margin-top: 20px;
+}
+#site_conteiner_hamburger #baner img{
+	display:block;
+	width:100%;
+}
+#site_conteiner_hamburger #product_list{
+    margin-top: 100px;
+}
+
+.drawer--left.drawer-open .drawer-hamburger {
+    left: 12.80rem;
+}

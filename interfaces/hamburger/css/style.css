@@ -50,9 +50,10 @@ header a#logo{
 
 
 
-#site_content{
+#main_site_content{
 	display: table;
-	width: 100%;
+	width: 90%;
+	margin: 0 auto;
 	margin-top:60px;
 }
 #promocje, #polecane{
@@ -60,18 +61,25 @@ header a#logo{
 	background: #808080;
 	margin: 30px;
 }
+
 #baner{
 	width: 100%;
 	display: table;
-	height: 300px;
-	background: #3d0d0d;
+    margin-top: 20px;
+}
+#baner img{
+	display:block;
+	width:100%;
+}
+#product_list{
+    margin-top: 100px;
 }
 
 
 footer{
 	display: table-footer-group;
 	width: 100%;
-	background: #242424;
+	background: #e59119;
 }
 footer ul{
 	display: table;
@@ -94,4 +102,28 @@ footer ul li a{
 }
 footer ul li a:hover{
 	text-decoration:underline;
+}
+
+#product_list .product_elem .product_img{
+	width:25%;
+}
+#product_list .product_elem .product_content .product_description{
+	display:none;
+}
+#product_list .product_elem .product_content .product_content_top{
+	height:auto;
+	height:initial;
+}
+#product_list .product_elem {
+    margin-bottom: 30px;
+}
+#product_list .product_elem .product_content .product_price{
+    font-size: 18px;
+    margin-right: 15px;
+}
+#product_list .product_elem .product_content .button{
+    font-size: 13px;
+}
+.drawer--left.drawer-open .drawer-hamburger {
+    left: 12.80rem;
 }

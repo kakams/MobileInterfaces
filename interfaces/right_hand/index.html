@@ -9,12 +9,14 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>Wachlarz UI</title>
   <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+  <link href="https://fonts.googleapis.com/css?family=Kanit:100,200,400" rel="stylesheet">
   <!-- Place favicon.ico in the root directory -->
 
   <link rel="stylesheet" href="../../css/normalize.css">
+  <link rel="stylesheet" href="../../css/productList.css">
   <link rel="stylesheet" href="../../css/main.css">
   
   <script src="../../js/vendor/modernizr-2.8.3.min.js"></script>
@@ -28,15 +30,15 @@
   <script src="js/main.js"></script>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body id="wachlarz" >
+<body id="wachlarz" ng-controller="SiteController as site">
   <div id="site_conteiner">
 	  <header>
-		  <a href="#" id="cart"> <img src="../../img/cart.png" alt="" /> </a>
-		  <a href="#" id="logo"> <img src="../../img/logo.png" alt="" /> </a>
+		  <a href="#" id="logo"> <img src="../../img/logo_biale.png" alt="" /> </a>
 	  </header>
-	  <main id="site_content" role="main">
+	  <div id="main_site_content" role="main" ng-hide="productData.length > 0">
 	  
 		  <div id="baner">
+		 	 <img src="../../img/baner.png" />
 		  </div>
 		  
 		  <div id="promocje">
@@ -45,7 +47,9 @@
 		  <div id="polecane">
 		  </div>
 		  
-	  </main>
+	  </div>
+	  <div id="product_list" ng-show="productData.length > 0" ng-include="'../../include_components/product-item.html'">
+	  </div>
 	  
 	  <footer>
 	 	 <ul>
@@ -56,7 +60,7 @@
 	  	</ul>
 	  </footer>
 	</div>
-  	<div id="menu" ng-controller="MenuController as menu">
+  	<div id="menu">
   		<div id="overlay"></div>
 	 	 <ul id="css_menu{{$index}}" class="css_menu" ng-style="getUlStyle($index)" 
 	 	 	 ng-repeat="singleMenu in menuItems track by $index" >
@@ -79,7 +83,10 @@
 	  	</div>
 	  	
 	  	<div id="menu_button" ng-style="getMenuButtonStyle(menuSize)">
-	  		menu
+		  	<div id="button_conent">
+		  	<img src="../../img/hamburger_ico.png" />
+	  		<span>menu</span>
+	  		</div>
 	  	</div>
 	  	
   	</div>

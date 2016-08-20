@@ -1,0 +1,36 @@
+<div id="site_conteiner_desktop">
+	  <header>
+	  <div id="logo"> <img src="../../img/logo.png" alt="" /> </div>
+	  <nav>
+	  	<ul>
+		  	<li ng-repeat="item in menuData" ng-include="'templates/desktop/templates/menu-item.html'">
+		  	</li>
+	  	</ul>
+	  </nav>
+	  </header>
+	  
+	  <div id="main_site_content" ng-hide="productData.length > 0">
+		  <div id="baner">
+		  	<img src="../../img/baner.png" />
+		  </div>
+		  
+		  <div id="promocje">
+		  </div>
+		  
+		  <div id="polecane">
+		  </div>
+		  
+	  </div>
+	  <div id="product_list" ng-show="productData.length > 0" ng-include="'../../include_components/product-item.html'">
+	  </div>
+	  
+</div>
+
+<footer id="desktop_footer">
+ <ul>
+ 	<li><a href="#">O nas</a></li>
+ 	<li><a href="#">Kontakt</a></li>
+ 	<li><a href="#">FAQ</a></li>
+ 	<li><a href="#">Dostawa</a></li>
+ </ul>
+ </footer>

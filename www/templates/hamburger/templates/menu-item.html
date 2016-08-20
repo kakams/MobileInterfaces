@@ -1,0 +1,14 @@
+<li><a href="#" class="drawer-brand">{{item.name}}</a></li>
+	<li class="drawer-dropdown" ng-repeat="children in item.childrens">
+	
+		<span class="drawer-menu-item" data-toggle="dropdown" role="button" aria-expanded="false">
+			{{children.name}}
+			<span class="drawer-caret"></span>
+		</span>
+		
+		<ul class="drawer-dropdown-menu">
+			<li ng-repeat="lastChildren in children.childrens">
+				<span ng-click="getProductList(lastChildren.id)" class="drawer-dropdown-menu-item">{{lastChildren.name}}</span>
+			</li>
+		</ul>
+</li>

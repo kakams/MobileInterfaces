@@ -28,7 +28,7 @@ body{
 header{
 	display: table;
 	width: 100%;
-    background: #fff;
+    background: #e59119;
     position: relative;
 }
 header a#cart img{
@@ -51,10 +51,11 @@ header a#logo{
 }
 
 
-
-#site_content{
+#main_site_content{
 	display: table;
-	width: 100%;
+	width: 90%;
+	margin: 0 auto;
+    margin-top: 10px;
 }
 #promocje, #polecane{
 	height: 400px;
@@ -64,8 +65,14 @@ header a#logo{
 #baner{
 	width: 100%;
 	display: table;
-	height: 300px;
-	background: #3d0d0d;
+    margin-top: 20px;
+}
+#baner img{
+	display:block;
+	width:100%;
+}
+#product_list{
+    margin-top: 20px;
 }
 #menu{
 	display:table;
@@ -77,19 +84,28 @@ header a#logo{
 	position:fixed;
 	bottom:-150px;
 	right:-150px;
-	background:#fff; 
+    background: rgba(229, 145, 25, 0.93);
 }
 #menu_button{
-	border-radius: 50%;
 	width: 100px;
 	height: 100px;
 	position:fixed;
 	bottom:10px;
 	right:10px;
-	background:#fff;
-	color:#000;
-	line-height:100px;
-	text-align:center; 
+	color:#fff;
+	text-align:center;
+    text-align: center;
+    box-sizing: border-box;
+}
+#button_conent{
+	display:inline-table;
+    line-height: 25px;
+}
+#menu_button img{
+	margin-top:10px;
+	display:inline-block;
+	width:50%;
+	margin:0 auto;
 }
 #overlay{
 	display:none;
@@ -147,13 +163,13 @@ header a#logo{
 	
 }
 #menu #css_menu0 li span{
-    background-color: #464646;
+    background-color: #965902;
 }
 #menu #css_menu1 li span{
-    background-color: #585858;
+    background-color: #ab6400;
 }
 #menu #css_menu2 li span{
-    background-color: #6b6b6b;
+    background-color: #c37301;
 }
 #navigation{
 	display:none;
@@ -210,4 +226,25 @@ footer ul li a{
 }
 footer ul li a:hover{
 	text-decoration:underline;
+}
+
+#product_list .product_elem .product_img{
+	width:25%;
+}
+#product_list .product_elem .product_content .product_description{
+	display:none;
+}
+#product_list .product_elem .product_content .product_content_top{
+	height:auto;
+	height:initial;
+}
+#product_list .product_elem {
+    margin-bottom: 30px;
+}
+#product_list .product_elem .product_content .product_price{
+    font-size: 18px;
+    margin-right: 15px;
+}
+#product_list .product_elem .product_content .button{
+    font-size: 13px;
 }

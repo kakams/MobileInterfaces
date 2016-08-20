@@ -11,9 +11,9 @@
   <meta name="viewport" content="width=device-width">
 
   <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
-  <!-- Place favicon.ico in the root directory -->
-
+  <link href="https://fonts.googleapis.com/css?family=Kanit:100,200,400" rel="stylesheet">
   <link rel="stylesheet" href="../../css/normalize.css">
+  <link rel="stylesheet" href="../../css/productList.css">
   <link rel="stylesheet" href="../../css/main.css">
   <script src="../../js/vendor/modernizr-2.8.3.min.js"></script>
   <link rel="stylesheet" href="css/style.css">
@@ -21,7 +21,6 @@
 <body id="desktop">
   <div id="site_conteiner" ng-controller="SiteController as siteCtrl">
 	  <header>
-	  <a href="#" id="cart"> <img src="../../img/cart.png" alt="" /> </a>
 	  <a href="#" id="logo"> <img src="../../img/logo.png" alt="" /> </a>
 	  <nav>
 	  	<ul>
@@ -31,8 +30,9 @@
 	  </nav>
 	  </header>
 	  
-	  <div id="site_content" ng-hide="productData.length > 0">
+	  <div id="main_site_content" ng-hide="productData.length > 0">
 		  <div id="baner">
+		  <img src="../../img/baner.png" />
 		  </div>
 		  
 		  <div id="promocje">
@@ -42,28 +42,19 @@
 		  </div>
 		  
 	  </div>
-	  <div id="product_list" ng-show="productData.length > 0">
-	  	  	<div class="product_elem" ng-repeat="item in productData">
-	  	  		<div class="product_img">
-		  	  		<img ng-src="../../img/products/{{item.categoryId}}/{{item.imageId}}.jpg" alt="{{item.name}}" />
-	  	  		</div>
-	  	  		<div class="product_content">
-	  	  			<div class="product_title">{{item.name}}</div>
-	  	  			<div class="product_price">{{item.price}}</div>
-	  	  			<div class="product_buttons"><div class="button">Dodaj do koszyka</div></div>
-	  	  		</div>
-	  	  	</div>
+	  <div id="product_list" ng-show="productData.length > 0" ng-include="'../../include_components/product-item.html'">
 	  </div>
 	  
-	  <footer>
-	  <ul>
-	  	<li><a href="#">O nas</a></li>
-	  	<li><a href="#">Kontakt</a></li>
-	  	<li><a href="#">FAQ</a></li>
-	  	<li><a href="#">Dostawa</a></li>
-	  </ul>
-	  </footer>
 	</div>
+
+ <footer>
+ <ul>
+ 	<li><a href="#">O nas</a></li>
+ 	<li><a href="#">Kontakt</a></li>
+ 	<li><a href="#">FAQ</a></li>
+ 	<li><a href="#">Dostawa</a></li>
+ </ul>
+ </footer>
   
   
   

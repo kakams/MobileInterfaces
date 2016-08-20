@@ -8,7 +8,7 @@
 		
 		<ul class="drawer-dropdown-menu">
 			<li ng-repeat="lastChildren in children.childrens">
-				<a href="#{{lastChildren.id}}" class="drawer-dropdown-menu-item">{{lastChildren.name}}</a>
+				<span ng-click="getProductList(lastChildren.id)" class="drawer-dropdown-menu-item">{{lastChildren.name}}</span>
 			</li>
 		</ul>
 </li>

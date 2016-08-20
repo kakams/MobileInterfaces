@@ -1,0 +1,90 @@
+#site_conteiner_bar{
+	display: table;
+	width: 100%;
+	max-width: 1180px;
+	margin: 0 auto;
+	background: #fff;
+	height: 100%
+}
+#site_conteiner_bar header{
+	display: table;
+	width: 100%;
+    background: #fff;
+    position: relative;
+}
+#site_conteiner_bar header #logo img{
+	max-width: 200px;
+}
+#site_conteiner_bar header #logo{
+	display: table;
+	margin: 0 auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+
+
+#site_conteiner_bar #product_list{
+	margin-top:20px;
+}
+#site_conteiner_bar #main_site_content{
+	display: table;
+	width: 90%;
+	margin: 0 auto;
+}
+#site_conteiner_bar #promocje, #site_conteiner_bar #polecane{
+	height: 400px;
+	background: #808080;
+	margin: 30px;
+}
+#site_conteiner_bar #baner{
+	width: 100%;
+	display: table;
+    margin-top: 20px;
+}
+#site_conteiner_bar #baner img{
+	display:block;
+	width:100%;
+}
+#bar_navigation{
+	display:table;
+	width: 100%;
+	max-width: 1180px;
+	margin: 0 auto;
+	background-color:#e59119;
+	color:#fff;
+	padding-top:10px;
+	padding-bottom:10px;
+	table-layout:fixed;
+	position:fixed;
+	bottom:0;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+}
+#bar_navigation .tab{
+	display:table-cell;
+	height:40px;
+	text-align:center;
+	vertical-align:middle;
+	border-right:1px solid #fff;
+	padding-left:5px;
+	padding-right:5px;
+}
+#bar_navigation .tab .menu_img{
+	height:40%;
+	max-width:90%;
+}
+#bar_navigation .tab span{
+	display:inline-block;
+	width:100%;
+	padding-top:5px;
+    font-family: 'Kanit', sans-serif;
+	font-size:10px;
+}
+#site_conteiner_bar #navigation .tab:last-of-type{
+	border-right:1px none;
+}
+#site_conteiner_bar footer#mobile_footer ul{
+	padding-bottom:60px;
+}

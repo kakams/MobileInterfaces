@@ -1,0 +1,152 @@
+#site_conteiner_desktop{
+	display: table;
+	width: 1180px;
+	margin: 0 auto;
+	background: #fff;
+	height: 100%
+}
+#site_conteiner_desktop header{
+	display: table;
+	width: 100%;
+	position: relative;
+}
+#site_conteiner_desktop header #logo img{
+	max-width: 300px;
+}
+#site_conteiner_desktop header #logo{
+	display: table;
+	margin: 0 auto;
+	margin-top: 30px;
+}
+#site_conteiner_desktop header nav{
+    display: table;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    margin-top: 30px;
+}
+#site_conteiner_desktop header nav > ul{
+	display: table;
+	width: 100%;
+}
+#site_conteiner_desktop header nav ul{
+	display: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+#site_conteiner_desktop header nav > ul{
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+    position: relative;
+}
+#site_conteiner_desktop header nav > ul > li{
+    display: table-cell;
+    height: 40px;
+    background: #ffffff;
+    vertical-align: middle;
+    text-align: center;
+    color: #3d3d3d;
+    font-size: 23px;
+    line-height: 40px;
+    font-family: 'Kanit', sans-serif;
+    font-weight:200;
+    cursor:pointer;
+}
+#site_conteiner_desktop header nav > ul > li:hover{
+	color: #fff;
+	background: #e59119;
+}
+#site_conteiner_desktop header nav > ul > li:hover > ul{
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    background-color: rgba(231,156,24,0.95);
+    position: absolute;
+    left: 0;
+    top: 39px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+#site_conteiner_desktop header nav > ul > li:last-of-type{
+	border-right: 0;
+}
+
+#site_conteiner_desktop header nav > ul > li:hover > ul > li{
+    display: table-cell;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: left;
+    font-size: 22px;
+    border-right: 1px solid rgba(255, 255, 255, 0.21);
+    color: #ffffff;
+    font-weight:200;
+}
+#site_conteiner_desktop header nav > ul > li:hover > ul > li:last-of-type{
+    border-right:0;
+}
+
+#site_conteiner_desktop header nav > ul > li:hover > ul > li > ul{
+    display: table;
+}
+#site_conteiner_desktop header nav > ul > li:hover > ul > li > ul > li{
+    padding-left: 30px;
+    padding-top: 15px;
+    font-weight:200;
+    cursor:pointer;
+    font-size: 21px;
+}
+#site_conteiner_desktop #product_list{
+	margin-top:40px;
+}
+
+#site_conteiner_desktop #main_site_content{
+	display: table;
+	width: 90%;
+	margin:0 auto;
+}
+#site_conteiner_desktop #promocje, #site_conteiner_desktop #polecane{
+	height: 400px;
+	background: #808080;
+	margin: 30px 0;
+}
+#site_conteiner_desktop #baner{
+	width: 100%;
+	display: table;
+    margin-top: 40px;
+}
+#site_conteiner_desktop #baner img{
+	display:block;
+	width:100%;
+}
+
+
+footer#desktop_footer{
+	display: table-footer-group;
+	width:100%;
+	background:#e59119;
+	text-align:right;
+}
+footer#desktop_footer ul{
+    display: table;
+    width: 1180px;
+    margin: 0 auto;
+	list-style-type:none;
+	text-align:right;
+}
+footer#desktop_footer ul li{
+    display: inline-block;
+	height:50px;
+	line-height:50px;
+    padding: 0 20px;
+    vertical-align: middle;
+    text-align: center;
+}
+footer#desktop_footer ul li a{
+	text-decoration:none;
+	color:#fff;
+}
+footer#desktop_footer ul li a:hover{
+	text-decoration:underline;
+}

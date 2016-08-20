@@ -1,0 +1,146 @@
+#site_conteiner_wachlarz{
+	display: table;
+	width: 100%;
+	max-width: 1180px;
+	margin: 0 auto;
+	background: #fff;
+	height: 100%
+}
+#site_conteiner_wachlarz header{
+	display: table;
+	width: 100%;
+    background: #e59119;
+    position: relative;
+}
+#site_conteiner_wachlarz header #logo img{
+	max-width: 200px;
+}
+#site_conteiner_wachlarz header #logo{
+	display: table;
+	margin: 0 auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+
+#site_conteiner_wachlarz #main_site_content{
+	display: table;
+	width: 90%;
+	margin: 0 auto;
+    margin-top: 10px;
+}
+#site_conteiner_wachlarz #promocje, #site_conteiner_wachlarz #polecane{
+	height: 400px;
+	background: #808080;
+	margin: 30px;
+}
+#site_conteiner_wachlarz #baner{
+	width: 100%;
+	display: table;
+    margin-top: 20px;
+}
+#site_conteiner_wachlarz #baner img{
+	display:block;
+	width:100%;
+}
+#site_conteiner_wachlarz #product_list{
+    margin-top: 20px;
+}
+#menu_wachlarz{
+	display:table;
+}
+#menu_wachlarz #menu_button_bg{
+	border-radius: 50%;
+	width: 300px;
+	height: 300px;
+	position:fixed;
+	bottom:-150px;
+	right:-150px;
+    background: rgba(229, 145, 25, 0.93);
+}
+#menu_wachlarz #menu_button{
+	width: 100px;
+	height: 100px;
+	position:fixed;
+	bottom:10px;
+	right:10px;
+	color:#fff;
+	text-align:center;
+    text-align: center;
+    box-sizing: border-box;
+}
+#menu_wachlarz #button_conent{
+	display:inline-table;
+    line-height: 25px;
+    width:55px;
+}
+#menu_wachlarz_button img{
+	margin-top:10px;
+	display:inline-block;
+	width:50%;
+	margin:0 auto;
+}
+#overlay{
+	display:none;
+	width:100%!important;
+	height:100%!important;
+	position:fixed;
+    bottom: 0;
+    right:0;
+	transform-origin:right bottom;
+}
+#menu_wachlarz .css_menu{
+	display:none;
+	position:fixed;
+    bottom: 0;
+    right:0;
+    overflow:hidden;
+    transform:scale(0);
+	transform-origin:right bottom;
+}
+#menu_wachlarz .css_menu li{
+    position: absolute;
+    overflow: hidden;
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+    border:none;
+}
+#menu_wachlarz .css_menu li > span{
+    display: table;
+    position: absolute;
+    text-decoration: none;
+    color: white;
+    border-radius: 100%;
+    text-align: center;
+}
+#menu_wachlarz .item_menu{
+    display: table;
+    margin: 0 auto;
+}
+#menu_wachlarz .item_menu_content{
+	display:table-cell;
+	vertical-align:middle;
+	text-align:center;
+}
+#menu_wachlarz .menu_img{
+	max-height:20%;
+	max-width: 100%;
+}
+#menu_wachlarz .item_name{
+    font-size: 10px;
+    width:100%;
+    overflow:hidden;
+	
+}
+#menu_wachlarz #css_menu0 li span{
+    background-color: #965902;
+}
+#menu_wachlarz #css_menu1 li span{
+    background-color: #ab6400;
+}
+#menu_wachlarz #css_menu2 li span{
+    background-color: #c37301;
+}

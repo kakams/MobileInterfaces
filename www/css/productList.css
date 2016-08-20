@@ -1,0 +1,107 @@
+#product_list{
+	display: table;
+	width: 90%;
+	margin:0 auto;
+	box-sizing: border-box;
+}
+#product_list .product_elem{
+	display:table;
+	width:100%;
+    margin-bottom: 20px;
+}
+.button{
+	height: 40px;
+	line-height:40px;
+	text-align:center;
+	padding: 0 10px;
+	background: #000;
+	color: #fff;
+    display: inline-block;
+    font-family: 'Kanit', sans-serif;
+    font-weight:200;
+}
+#product_list .product_elem .product_img{
+	display:table-cell;
+	vertical-align:middle;
+	padding:3px;
+	border:1px solid #a9a9a9;
+	width:17%;
+	box-sizing: border-box;
+}
+#product_list .product_elem .product_img img{
+	display:inline-block;
+	width:100%;	
+}
+#product_list .product_elem .product_content{
+	display:table-cell;
+	vertical-align:top; 
+	padding-left: 20px;
+}
+#product_list .product_elem .product_content .product_content_top{
+	display: table;
+	width:100%;
+	height: 140px;
+}
+#product_list .product_elem .product_content .product_title{
+	display:table;
+	width:100%;
+	color: #000;
+    height: 30px;
+    margin-bottom: 15px;
+    font-size: 27px;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 300;
+    border-bottom: 1px solid #a9a9a9;
+}
+#product_list .product_elem .product_content .product_description{
+	display:block;
+	width:100%;
+	color: #000;
+	overflow: hidden;
+    font-size: 15px;
+    line-height: 21px;
+    padding-left: 15px;
+    height: 63px;
+    box-sizing: border-box;
+}
+#product_list .product_elem .product_content .product_price{
+	display:inline-block;
+	text-align:right;
+	font-size:20px;
+	font-weight: bolder;
+	margin-right:30px;
+    font-family: 'Kanit', sans-serif;
+}
+#product_list .product_elem .product_img .img{
+	width:100%;
+	height:100%;
+    box-sizing: border-box;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#product_list .product_elem .product_content .button_and_price{
+	display:table;
+	width:100%;
+	text-align:right;
+}
+#product_list.mobile .product_elem .product_img{
+	width:25%;
+}
+#product_list.mobile .product_elem .product_content .product_description{
+	display:none;
+}
+#product_list.mobile .product_elem .product_content .product_content_top{
+	height:auto;
+	height:initial;
+}
+#product_list.mobile .product_elem {
+    margin-bottom: 30px;
+}
+#product_list.mobile .product_elem .product_content .product_price{
+    font-size: 18px;
+    margin-right: 15px;
+}
+#product_list.mobile .product_elem .product_content .button{
+    font-size: 13px;
+}

@@ -1,0 +1,11 @@
+{{item.name}}
+<ul>
+	<li ng-repeat="children in item.childrens">{{children.name}}
+		<ul>
+			<li ng-repeat="lastChildren in children.childrens">
+				<span ng-click="getProductList(lastChildren.id)">{{lastChildren.name}}</span>
+			</li>
+		</ul>
+	</li>
+	
+</ul>

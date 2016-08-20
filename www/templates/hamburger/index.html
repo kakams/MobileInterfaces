@@ -1,0 +1,46 @@
+<div id="site_conteiner_hamburger" class="drawer drawer--left drawer--sidebar" >
+	  <header>
+		  <div id="logo" ng-click="productData = []"> <img src="../../img/logo.png" alt="" /> </div>
+	  </header>
+	  
+	  <button type="button" class="drawer-toggle drawer-hamburger">
+	    <span class="sr-only">Menu</span>
+	    <span class="drawer-hamburger-icon"></span>
+	  </button>
+	  <nav class="drawer-nav" role="navigation">
+	  	<ul class="drawer-menu">
+	  		<li ng-repeat="item in menuData" ng-include="'templates/hamburger/templates/menu-item.html'">
+ 			</li>
+ 			<li id="expander">
+ 			</li>
+	  	</ul>
+	  </nav>
+	  <div id="main_site_content" role="main" ng-hide="productData.length > 0">
+	  
+		  <div id="baner">
+		 	 <img src="../../img/baner.png" />
+		  </div>
+		  
+		  <div id="promocje">
+		  </div>
+		  
+		  <div id="polecane">
+		  </div>
+		  
+	  </div>
+	  <div id="product_list" class="mobile" ng-show="productData.length > 0" ng-include="'../../include_components/product-item.html'">
+	  </div>
+</div>
+ <footer id="mobile_footer">
+	 <ul>
+	 	<li><a href="#">O nas</a></li>
+	 	<li><a href="#">Kontakt</a></li>
+	 	<li><a href="#">FAQ</a></li>
+	 	<li><a href="#">Dostawa</a></li>
+	 </ul>
+ </footer>
+	  
+<script>
+	
+</script>
+	

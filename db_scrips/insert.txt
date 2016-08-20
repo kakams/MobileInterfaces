@@ -1,0 +1,10 @@
+insert into `20454239_1`.`Product` (`name`, `description`, `price`, `idcategory`, `ispromotion`, `imageid`) values ('','', '39.99', '622', '0', '1');
+insert into `20454239_1`.`Product` (`name`, `description`, `price`, `idcategory`, `ispromotion`, `imageid`) values ('','', '39.99', '622', '0', '2');
+insert into `20454239_1`.`Product` (`name`, `description`, `price`, `idcategory`, `ispromotion`, `imageid`) values ('','', '39.99', '622', '0', '3');
+insert into `20454239_1`.`Product` (`name`, `description`, `price`, `idcategory`, `ispromotion`, `imageid`) values ('','', '39.99', '622', '0', '4');
+insert into `20454239_1`.`Product` (`name`, `description`, `price`, `idcategory`, `ispromotion`, `imageid`) values ('','', '39.99', '622', '0', '5');
+insert into `20454239_1`.`Product` (`name`, `description`, `price`, `idcategory`, `ispromotion`, `imageid`) values ('','', '34.99', '622', '1', '6');
+insert into `20454239_1`.`Product` (`name`, `description`, `price`, `idcategory`, `ispromotion`, `imageid`) values ('','', '39.99', '622', '0', '7');
+insert into `20454239_1`.`Product` (`name`, `description`, `price`, `idcategory`, `ispromotion`, `imageid`) values ('','', '39.99', '622', '0', '8');
+insert into `20454239_1`.`Product` (`name`, `description`, `price`, `idcategory`, `ispromotion`, `imageid`) values ('','', '34.99', '622', '1', '9');
+insert into `20454239_1`.`Product` (`name`, `description`, `price`, `idcategory`, `ispromotion`, `imageid`) values ('','', '39.99', '622', '0', '10');

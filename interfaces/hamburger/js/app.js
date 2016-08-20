@@ -9,9 +9,21 @@ var app = angular.module('mobileInterfaces', []);
 	    return this;
   });
   
-  
-  app.controller('MenuController', function($scope, menufactory) {
+
+  app.filter('price', function() {
+	    return function(value) {
+	        return parseFloat(value).toFixed(2);
+	    }
+  });
+  app.controller('SiteController', function($scope,$http, menufactory) {
 	$scope.menuData = [];
+	$scope.productData = [];
+	
+	$scope.getProductList = function (categoryId){   
+		$http({method: 'GET', url: '../../../services/getProductsList.php?catId='+categoryId}).success(function(json) {
+			$scope.productData = json;
+	    });
+    };
 	
 	
 

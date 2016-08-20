@@ -9,12 +9,25 @@
 	    }
 	    return this;
   });
-  
-  app.controller('MenuController', function($scope, menufactory) {
+
+  app.filter('price', function() {
+	    return function(value) {
+	        return parseFloat(value).toFixed(2);
+	    }
+  });
+	
+  app.controller('SiteController', function($scope,$http, menufactory) {
 	$scope.menuData = [];
 	$scope.menuItems = [];
 	$scope.backID = 0;
-
+	$scope.productData = [];
+	
+	
+	function getProductList(categoryId){   
+		$http({method: 'GET', url: '../../../services/getProductsList.php?catId='+categoryId}).success(function(json) {
+			$scope.productData = json;
+	    });
+    };
     $scope.getMenuItems = function(elementId){
     	var menuData = $scope.menuData;
         var singleItem = [];
@@ -39,7 +52,10 @@
     		tmpItems = menuData[decimal-1].childrens[unity-1].childrens;
     	}
     	
-    	if(tmpItems.length > 0){
+    	if(hundreds !== 0){
+    		getProductList(elementId);	
+    	}
+    	else if(tmpItems.length > 0){
     		menuData = tmpItems;
     	}
 		$scope.menuItems = menuData;
