@@ -15,10 +15,10 @@
 		  </div>
 		  
 	  </div>
-	  <div id="product_list" ng-show="productData.length > 0" ng-include="'../../include_components/product-item.html'">
+	  <div id="product_list" class="mobile" ng-show="productData.length > 0" ng-include="'../../include_components/product-item.html'">
 	  </div>
 	  
-	  <footer>
+	  <footer id="mobile_footer" class="wachlarz_footer" >
 	 	 <ul>
 	  		<li><a href="#">O nas</a></li>
 	  		<li><a href="#">Kontakt</a></li>
@@ -50,10 +50,7 @@
 	  	</div>
 	  	
 	  	<div id="menu_button" ng-style="getMenuButtonStyle(menuSize)">
-		  	<div id="button_conent">
-		  	<img src="../../img/hamburger_ico.png" />
-	  		<span>menu</span>
-	  		</div>
+		  	
 	  	</div>
 	  	
   	</div>

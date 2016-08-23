@@ -1,0 +1,24 @@
+ <div class="page_content" id="task">
+  	
+  	<div id="task_content">
+	  	<span id="task_text">
+	  	Znajdź i dodaj do koszyka nastpujący produkt:
+	  	</span>
+	  	<div id="task_product">
+		  	<div id="category_description">
+		  		<span>{{product.categoryDescription}}:</span>
+		  	</div>
+		  	<div id="product_name">
+		  		<span>{{product.name}}</span>
+		  	</div>
+		  	<div id="product_img">
+		  		<img ng-src="../../img/products/{{product.categoryId}}/{{product.imageId}}.jpg" />
+		  	</div>
+	  	</div>
+  	</div>
+  	
+  	<div id="startButton" ng-click="start()">
+  		Start!
+  	</div>
+  </div>
+  

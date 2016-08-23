@@ -1,11 +1,3 @@
-* {
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    position: relative;
-}
 body,html{
 	height: 100%;
 	width: 100%;
@@ -15,11 +7,11 @@ body,html{
 	font-weight: bold;
 }
 body{
-	background: #fafafa;
+	background: #fff;
 }
 h1{
     padding-top: 0;
-    font-size: 16pt;
+    font-size: 25px;
     display: table;
     width: 100%;
     padding-bottom: 10px;
@@ -32,13 +24,13 @@ h1{
 #instruction p{
 	padding-bottom:10px;
 }
-a#startButton{
+#startButton{
 	display:block;
 	width:80%;
 	height:70px;
 	font-size:14pt;
 	color:#000;
-	background-color:#5dbb33;
+	background-color:#e59119;
 	text-align:center;
 	line-height:70px;
 	color:#fff;
@@ -48,8 +40,9 @@ a#startButton{
 	margin-bottom:20px;
 }
 footer#mobile_footer{
-	display: table-footer-group;
+	display: table;
 	width: 100%;
+	background:#e59119;
 }
 footer#mobile_footer ul{
 	display: table;
@@ -59,7 +52,6 @@ footer#mobile_footer ul{
 	table-layout:fixed;
 	padding:0;
 	margin:0;
-	background:#e59119;
     height: 50px;
 }
 footer#mobile_footer ul li{
@@ -73,4 +65,74 @@ footer#mobile_footer ul li a{
 }
 footer#mobile_footer ul li a:hover{
 	text-decoration:underline;
+}
+
+.page_content{
+	width:90%;
+	margin:0 auto;
+	padding-top:20px;
+	padding-bottom:20px;
+	font-size:20px;
+	line-height:30px
+}
+#questions{
+    box-sizing: border-box;
+	padding-top:40px;
+}
+.single_question{
+	padding-top:20px;
+	padding-bottom:30px;
+    box-sizing: border-box;
+}
+.question{
+	padding-bottom:20px;
+	
+}
+.answers{
+	display:table;
+	width:80%;
+	margin:0 auto;
+	margin-top:10px;
+    box-sizing: border-box;
+}
+.answers.horizontal{
+	table-layout:fixed;
+}
+.answers.horizontal .answer{
+	display:table-cell;
+	box-sizing:border-box;
+	text-align:center;
+	vertical-align:top;
+	border: 10px solid #fff;
+}
+.answers.horizontal .answer.selected{
+	border-color: #e59119;
+}
+.answers.horizontal .answer .answer_text{
+	display:table;
+	width:100%;
+	padding:10px;
+	box-sizing:border-box;
+	text-align:center;
+}
+.answers.horizontal .answer img.answer_img{
+	width:80%;
+    display: block;
+    margin: 0 auto;
+}
+#task{
+	text-align:center;
+	padding:20px 0;
+}
+#task_product{
+	padding:15px 0;
+}
+#category_description{
+	font-weight:bold;
+}
+#product_img img{
+	width:80%;
+	display:block;
+	margin:0 auto;
+	margin-top:10px;
 }

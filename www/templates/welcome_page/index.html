@@ -1,0 +1,53 @@
+ <div class="page_content">
+  	<h1>Witaj!</h1>
+  	<div id="instruction">
+	  	<p>Witaj na stronie przeznaczonej do badania interfejsów użytkownika na użądzeniach mobilnych.</p>
+		<p>Po klikniciu w "Start" zostaniesz przekierowany na stronę mającą imitować sklep internetowy. Twoim zadaniem będzie jak najszybciej znaleźć pewien produkt i dodać go do koszyka.</p>
+		<p>Zadań tego typu będzie kilka. Do każdego zadania zostanie Ci przydzielony inny interfejs. Na koniec poproszę Cię o wypełnienie krótkiej ankiety.</p>
+  	</div>
+  	
+  	
+  	<div id="questions">
+  		<p class="bold">Na początek kilka pytań potrzebnych do rozpoczęcia badania:</p>
+	  	<div class="single_question">
+		  	<div class="question">
+		  		1) Z jakiego urządzenia korzystasz w tym momencie?
+		  	</div>	
+		  	<div class="answers horizontal">
+		  		
+			  	<div class="answer" ng-class="{'selected': device === 'smartphone'}" ng-click="setDevice('smartphone')"> 
+			  		<span class="answer_text">Smartphone</span>
+			  		<img src="../../img/questions/phone.png" class="answer_img" alt="" />
+			  	</div>	
+			  	<div class="answer" ng-class="{'selected': device === 'tablet'}" ng-click="setDevice('tablet')">
+			  		<span class="answer_text">Tablet</span>
+			  		<img src="../../img/questions/tablet.png" class="answer_img" alt="" />
+			  	</div>	
+		  	
+		  	</div>	
+	  	</div>
+	  	
+	  	<div class="single_question">
+		  	<div class="question">
+		  		2) Której ręki używasz do sterowania smartphonem / tabletem (ręka którą klikasz / tapiesz)?
+		  	</div>	
+		  	<div class="answers horizontal">
+		  		
+			  	<div class="answer" ng-class="{'selected': hand === 'left'}" ng-click="setHand('left')">
+			  		<span class="answer_text">Lewa</span>
+			  		<img src="../../img/questions/left_hand.png" class="answer_img" alt="" />
+			  	</div>	
+			  	<div class="answer" ng-class="{'selected': hand === 'right'}" ng-click="setHand('right')">
+			  		<span class="answer_text">Prawa</span>
+			  		<img src="../../img/questions/right_hand.png" class="answer_img" alt="" />
+			  	</div>	
+		  	</div>	
+	  	</div>
+  	</div>
+  	
+  	
+  	<div id="startButton" ng-click="start()">
+  		Start!
+  	</div>
+  </div>
+  

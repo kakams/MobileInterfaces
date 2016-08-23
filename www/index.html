@@ -17,7 +17,19 @@
   <script>window.jQuery || document.write('<script src="../../js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
   <script src="js/vendor/angular.js"></script>
   <script src="js/angular-route.min.js"></script>
-  <script src="js/app.js"></script>
+  
+  <!--   Angular app -->
+  <script src="js/app/app.js"></script>
+  <script src="js/app/services.js"></script>
+  <script src="js/app/controllers/WelcomeController.js"></script>
+  <script src="js/app/controllers/BottomBarController.js"></script>
+  <script src="js/app/controllers/DesktopController.js"></script>
+  <script src="js/app/controllers/HamburgerController.js"></script>
+  <script src="js/app/controllers/WachlarzController.js"></script>
+  <script src="js/app/controllers/TaskController.js"></script>
+  
+  
+  
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
   
@@ -44,8 +56,15 @@
   
 </head>
 <body>
-  
   <div ng-view></div>
    
+  <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='https://www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-80344909-1','auto');ga('send','pageview');
+  </script>
 </body>
 </html>

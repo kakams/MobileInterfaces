@@ -8,7 +8,12 @@ var app = angular.module('mobileInterfaces', []);
 	    }
 	    return this;
   });
-
+  
+  app.filter('price', function() {
+	    return function(value) {
+	        return parseFloat(value).toFixed(2);
+	    }
+  });
 
   
   app.controller('SiteController', function($scope, $http, menufactory) {
@@ -18,7 +23,6 @@ var app = angular.module('mobileInterfaces', []);
 	
 	$scope.getProductList = function (categoryId){   
 		$http({method: 'GET', url: '../../../services/getProductsList.php?catId='+categoryId}).success(function(json) {
-    		console.log(json);
 			$scope.productData = json;
 	    });
     };
@@ -31,4 +35,5 @@ var app = angular.module('mobileInterfaces', []);
   
 
 		
+
   

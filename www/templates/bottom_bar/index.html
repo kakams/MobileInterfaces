@@ -29,11 +29,11 @@
 	</div>
   
 	<nav id="bar_navigation" role="navigation">
-		<div class="tab" ng-show="backID >= 0" ng-click="getMenuItems(backID)">
+		<div class="tab" ng-show="backID >= 0" ng-click="getMenuItems(backID, true)">
 			<img ng-src="../../img/menu_icons/back.png" class="menu_img" />
 			<span>Back</span>
 		</div>
-		<div class="tab" ng-repeat="item in menuItems" ng-click="getMenuItems(item.id)">
+		<div class="tab" ng-repeat="item in menuItems" ng-click="getMenuItems(item.id, false)">
 	  		<img ng-src="../../img/menu_icons/{{item.id}}.png" class="menu_img" />
 			<span>{{item.name}}</span>
 		</div>
