@@ -1,4 +1,7 @@
-<div id="site_conteiner_wachlarz">
+<div id="product_tf" ng-show="task.product" ng-include="'../../include_components/product-info.html'">
+</div>
+	  
+<div id="site_conteiner_wachlarz" ng-class="{'product_active': task.product}">
 	  <header>
 		  <div id="logo" ng-click="productData = []"> <img src="../../img/logo_biale.png" alt="" /> </div>
 	  </header>
@@ -26,6 +29,9 @@
 	  		<li><a href="#">Dostawa</a></li>
 	  	</ul>
 	  </footer>
+	  
+	 <div id="popups" ng-include="'../../include_components/popup-content.html'">
+	 </div>
 	</div>
   	<div id="menu_wachlarz">
   		<div id="overlay"></div>
@@ -34,7 +40,7 @@
 	  		<li ng-style="getLiStyle($index, singleMenu.length,$parent.$index, menuSize)"
 	  		    ng-repeat="item in singleMenu">
 	  			
-	  			<span ng-style="getSpanStyle($index, singleMenu.length, $parent.$index, menuSize)" 
+	  			<span  class="wachlarz_tab" ng-style="getSpanStyle($index, singleMenu.length, $parent.$index, menuSize)" 
 	  				  ng-click="getMenuItems(item.id)">
   				  		<div class="item_menu" ng-style="getMenuItemStyle($parent.$index, singleMenu.length)">
 	  				  		<div class="item_menu_content">

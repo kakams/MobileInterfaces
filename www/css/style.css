@@ -1,4 +1,4 @@
-body,html{
+body,html, #ngViewElem{
 	height: 100%;
 	width: 100%;
 	display:table;
@@ -9,6 +9,7 @@ body,html{
 body{
 	background: #fff;
 }
+
 h1{
     padding-top: 0;
     font-size: 25px;
@@ -66,7 +67,6 @@ footer#mobile_footer ul li a{
 footer#mobile_footer ul li a:hover{
 	text-decoration:underline;
 }
-
 .page_content{
 	width:90%;
 	margin:0 auto;
@@ -132,7 +132,123 @@ footer#mobile_footer ul li a:hover{
 }
 #product_img img{
 	width:80%;
+    max-width: 180px;
 	display:block;
 	margin:0 auto;
 	margin-top:10px;
+}
+#popups{
+	display:none;
+}
+.popup_text{
+	padding:15px;
+	badding-bottom:0;
+	color:#000;
+}
+.popup_buttons{    
+	padding-bottom: 10px;
+    display: table;
+    width: 100%;
+    text-align: center;
+}
+.popup_buttons .button{
+	margin:5px 10px;
+	background-color: #e59119;
+	color: #fff;
+    padding: 0px 20px;
+}
+.popup_buttons .button.grey{
+	background-color: #7b7b7b;
+}
+.popup_buttons .button:first-of-type{
+	margin-left:0;
+}
+.popup_buttons .button:last-of-type{
+	margin-right:0;
+}
+
+#product_tf{
+	display: table;
+    width: 100%;
+    background: #404040;
+    position:fixed;
+    z-index: 100;
+    top:0;
+    right:0;
+}
+#product_tf_desktop{
+	display: table;
+    background: #404040;
+    z-index: 100;
+    position: absolute;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+#product_tf_desktop #product_tf_table{
+	height:100%;
+}
+
+#product_tf_table{
+	display: table;
+	width:100%;
+}
+#product_tf_table .image_tf{
+	display:table-cell;
+	text-align:center;
+	vertical-align:middle;
+    height: 50px;
+	width:50px;
+	padding:5px;
+	box-sizing:border-box;
+}
+#product_tf_table .image_tf img{
+	display:inline-block;
+	max-height:100%;
+	max-width:100%;
+}
+#product_tf_table .text_tf{
+	display:table-cell;
+	text-align:left;
+	vertical-align:top;
+	padding:5px;
+	box-sizing:border-box;
+	color:#fff;
+    
+}
+#product_tf_table .text_tf .category_tf_desc{
+	display:block;
+    font-size:13px;
+    line-height: 20px;
+}
+#product_tf_table .text_tf .product_tf_name{
+	display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+#product_tf_table .text_tf .product_tf_name .product_tf_name_cont{
+    white-space: nowrap;
+    overflow: hidden;
+    display: table-cell;
+    width: 100%;
+    padding-right: 15px;
+    text-overflow: ellipsis;
+    font-size:15px;
+    font-weight: bold;
+    line-height: 20px;
+    height: 20px;
+}
+
+#product_tf_table .button_tf_abort{
+	display:table-cell;
+	text-align:center;
+	vertical-align:middle;
+	color:#fff;
+    background: #bf0000;
+    width:50px;
+    height:50px;
+    font-size:10px;
+}
+.ui-loader{
+	display:none;
 }

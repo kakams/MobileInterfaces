@@ -20,6 +20,10 @@ var app = angular.module('mobileInterfaces', ['ngRoute']).config(['$routeProvide
         templateUrl: '../../templates/task/index.html',
         controller: 'TaskController'
     }).
+    when('/questions', {
+        templateUrl: '../../templates/questions/index.html',
+        controller: 'QuestionsController'
+    }).
     otherwise({
         templateUrl: '../../templates/welcome_page/index.html',
         controller: "WelcomeController"

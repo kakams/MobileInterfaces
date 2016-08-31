@@ -10,6 +10,9 @@
 	background: #fff;
 	height: 100%
 }
+#site_conteiner_wachlarz.product_active{
+	margin-top: 50px;
+}
 #site_conteiner_wachlarz header{
 	display: table;
 	width: 100%;

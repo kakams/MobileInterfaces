@@ -1,0 +1,12 @@
+<div id="product_tf_table">
+  	<div class="image_tf"><img ng-src="../img/products/{{task.product.categoryId}}/{{task.product.imageId}}.jpg" /></div>
+  	<div class="text_tf">
+  		<div class="category_tf_desc">{{task.product.categoryDescription}}:</div>
+  		<div class="product_tf_name">
+	  		<div class="product_tf_name_cont">
+	  			<span>{{task.product.name}}</span>
+	  		</div>
+  		</div>
+	</div>
+	<div class="button_tf_abort" ng-click="abortCurrentTask()">Przerwij zadanie</div>
+</div>

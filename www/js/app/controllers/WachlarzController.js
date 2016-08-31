@@ -1,15 +1,32 @@
-   app.controller('WachlarzController', function($scope,$http, menufactory) {
+   app.controller('WachlarzController', ['$scope','$http','$location', 'userService','menufactory', function($scope,$http, $location, userService, menufactory) {
 		$scope.menuData = [];
 		$scope.menuItems = ['','',''];
 		$scope.productData = [];
+		$scope.taskActions = [];
+		$scope.addRotate = 0;
+		if(userService.hand === 'left'){
+			$scope.addRotate = 90;
+		}
+		$scope.taskProduct = {};
+		$scope.task = userService.tasks[userService.curentTask];
+		if($scope.task !== undefined){
+			$scope.taskProduct = userService.tasks[userService.curentTask].product;
+		}
 		
-		function getProductList(categoryId){   
+		function getProductList(categoryId){  
+			if(categoryId === parseInt($scope.taskProduct.categoryId)){
+				createAction('proper_category', null);
+			}
+			else{
+				createAction('wrong_category', null);
+			} 
 			$http({method: 'GET', url: '../../../services/getProductsList.php?catId='+categoryId}).success(function(json) {
 				$scope.productData = json;
 		    });
 		};
 		
 		$scope.$on('$routeChangeSuccess', function() {
+			    onAction($scope.taskActions);
 				$(document).on('click', '.css_menu', function(e) {
 			  	 if (e.target !== this){
 			  	    return;
@@ -17,6 +34,7 @@
 				  var menu = $(this);
 				  $(menu).hide();
 			  	  document.elementFromPoint(e.clientX, e.clientY).click();
+			  	  $scope.taskActions.splice(-1,1);
 				  $(menu).show();
 			  	});
 
@@ -27,6 +45,7 @@
 				  var menu = $(this).parent();
 				  $(menu).hide();
 			  	  document.elementFromPoint(e.clientX, e.clientY).click();
+			  	  $scope.taskActions.splice(-1,1);
 				  $(menu).show();
 			  	});
 
@@ -36,7 +55,8 @@
 				  }
 			  	  var menu = $(this).parent();
 			  	  $(menu).hide();
-			    	  document.elementFromPoint(e.clientX, e.clientY).click();
+		    	  document.elementFromPoint(e.clientX, e.clientY).click();
+			  	  $scope.taskActions.splice(-1,1);
 			  	  $(menu).show();
 			    });
 			  	$('#menu_button').on('click', function() {
@@ -59,7 +79,7 @@
 			return { 
 				width: size+"px",
 				height: size+"px",
-				transform: "rotate("+rotate+"deg) skew("+skew+"deg)"
+				transform: "rotate("+(rotate + $scope.addRotate)+"deg) skew("+skew+"deg)"
 			}
 		}
 		$scope.getUlStyle = function(stepIndex){
@@ -97,6 +117,7 @@
 			var rotateSkew = (-1)*angle/2 - skew;
 			var step = menuSize/4;
 			var size = menuSize - stepIndex*step;
+			
 			return { 
 				width: 2*size+"px",
 				height: 2*size+"px",
@@ -165,6 +186,57 @@
 	     $scope.menuData = json.data;
 	     $scope.getMenuItems(0, null);
 	  });
+
+	    $scope.checkProduct = function (productId){
+	    	if($scope.taskProduct !== {}){
+		    	if(productId === $scope.taskProduct.id){
+
+			    	$scope.task.endDate = new Date().getTime();
+			    	$scope.task.succes = true;
+		    		console.log($scope.taskActions);
+			    	$scope.task.actions = angular.copy($scope.taskActions);
+		    		var popup = $("#popup_succes");
+					$.fancybox.open([{
+			            type: 'inline',
+			            href: popup,
+			            closeClick  : false,
+			            closeBtn : false,
+				        helpers     : { 
+				          overlay : {closeClick: false}
+				        }
+			        }], {});
+		    	}
+		    	else{
+		    		$scope.taskActions.push(createAction('wrong_product', null));
+			    	var popup = $("#popup_bad");
+					$.fancybox.open([{
+			            type: 'inline',
+			            href: popup,
+			            closeClick  : false,
+			            closeBtn : false,
+				        helpers     : { 
+				          overlay : {closeClick: false}
+				        }
+			        }], {});
+		    	}
+	    	}
+	    };
+
+	    $scope.completeTask = function (){
+	    	$.fancybox.close();
+    	    $(document).off();
+	    	$location.path( "/task" );
+	    }
+	    $scope.abortCurrentTask = function (){
+	    	$.fancybox.close();
+	    	$scope.task.endDate = new Date().getTime();
+	    	$scope.task.succes = false;
+    	    $(document).off();
+	    	$location.path( "/task" );
+	    }
+	    $scope.continueSearch = function (){
+	    	$.fancybox.close();
+	    }
 	
-	});
+	}]);
 	  

@@ -1,16 +1,31 @@
 
-  app.controller('BottomBarController', function($scope,$http, menufactory) {
+  app.controller('BottomBarController', ['$scope','$http','$location', 'userService','menufactory', function($scope,$http, $location, userService, menufactory) {
 		$scope.menuData = [];
 		$scope.menuItems = [];
 		$scope.backID = 0;
 		$scope.productData = [];
+		$scope.taskActions = [];
 		
+		$scope.taskProduct = {};
+		$scope.task = userService.tasks[userService.curentTask];
+		if($scope.task !== undefined){
+			$scope.taskProduct = userService.tasks[userService.curentTask].product;
+		}
 		
 		function getProductList(categoryId){   
+			if(categoryId === parseInt($scope.taskProduct.categoryId)){
+				createAction('proper_category', null);
+			}
+			else{
+				createAction('wrong_category', null);
+			}
 			$http({method: 'GET', url: '../../../services/getProductsList.php?catId='+categoryId}).success(function(json) {
 				$scope.productData = json;
 		    });
 	    };
+	    $scope.$on('$routeChangeSuccess', function() {
+			onAction($scope.taskActions);
+		});
 	    
 	    $scope.getMenuItems = function(elementId,back){
 	    	var menuData = $scope.menuData;
@@ -57,5 +72,55 @@
 	       $scope.menuData = json.data;
 	       $scope.getMenuItems(0, false);
 	    });
-	  
-  });
+	    
+	    $scope.checkProduct = function (productId){
+	    	if($scope.taskProduct !== {}){
+		    	if(productId === $scope.taskProduct.id){
+
+			    	$scope.task.endDate = new Date().getTime();
+			    	$scope.task.succes = true;
+		    		console.log($scope.taskActions);
+			    	$scope.task.actions = angular.copy($scope.taskActions);
+		    		var popup = $("#popup_succes");
+					$.fancybox.open([{
+			            type: 'inline',
+			            href: popup,
+			            closeClick  : false,
+			            closeBtn : false,
+				        helpers     : { 
+				          overlay : {closeClick: false}
+				        }
+			        }], {});
+		    	}
+		    	else{
+		    		$scope.taskActions.push(createAction('wrong_product', null));
+			    	var popup = $("#popup_bad");
+					$.fancybox.open([{
+			            type: 'inline',
+			            href: popup,
+			            closeClick  : false,
+			            closeBtn : false,
+				        helpers     : { 
+				          overlay : {closeClick: false}
+				        }
+			        }], {});
+		    	}
+	    	}
+	    };
+
+	    $scope.completeTask = function (){
+	    	$.fancybox.close();
+	    	$(document).off();
+	    	$location.path( "/task" );
+	    }
+	    $scope.abortCurrentTask = function (){
+	    	$.fancybox.close();
+	    	$scope.task.endDate = new Date().getTime();
+	    	$scope.task.succes = false;
+	    	$(document).off();
+	    	$location.path( "/task" );
+	    }
+	    $scope.continueSearch = function (){
+	    	$.fancybox.close();
+	    }
+  }]);

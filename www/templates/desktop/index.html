@@ -1,9 +1,12 @@
-<div id="site_conteiner_desktop">
+<div id="product_tf_desktop" ng-show="task.product" class="desktop" onload="onProductBarLoaded()" ng-include="'../../include_components/product-info.html'">
+</div>
+	  
+<div id="site_conteiner_desktop"  ng-class="{'product_active': task.product}">
 	  <header>
 	  <div id="logo"> <img src="../../img/logo.png" alt="" /> </div>
 	  <nav>
 	  	<ul>
-		  	<li class="main_menu" ng-repeat="item in menuData" ng-include="'templates/desktop/templates/menu-item.html'">
+		  	<li class="main_menu desktop_menu_open" ng-repeat="item in menuData" ng-include="'templates/desktop/templates/menu-item.html'">
 		  	</li>
 	  	</ul>
 	  </nav>
@@ -24,6 +27,8 @@
 	  <div id="product_list" ng-show="productData.length > 0" ng-include="'../../include_components/product-item.html'">
 	  </div>
 	  
+	 <div id="popups" ng-include="'../../include_components/popup-content.html'">
+	 </div>
 </div>
 
 <footer id="desktop_footer">

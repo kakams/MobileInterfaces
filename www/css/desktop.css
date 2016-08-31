@@ -5,6 +5,9 @@
 	background: #fff;
 	height: 100%
 }
+#site_conteiner_desktop.product_active{
+	margin-top:50px;
+}
 #site_conteiner_desktop header{
 	display: table;
 	width: 100%;

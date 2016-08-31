@@ -3,13 +3,15 @@
 		$scope.menuData = [];
 		$scope.productData = [];
 		$scope.taskProduct = {};
-		if(userService.tasks[userService.curentTask] !== undefined){
+		$scope.taskActions = [];
+		
+		$scope.task = userService.tasks[userService.curentTask];
+		if($scope.task !== undefined){
 			$scope.taskProduct = userService.tasks[userService.curentTask].product;
-			console.log($scope.taskProduct);
 		}
 		
 		$scope.$on('$routeChangeSuccess', function() {
-			$('.drawer').drawer({
+			var drawer = $('.drawer').drawer({
 			  class: {
 			    nav: 'drawer-nav',
 			    toggle: 'drawer-toggle',
@@ -25,9 +27,16 @@
 			  },
 			  showOverlay: true
 			});
+			onAction($scope.taskActions);
 		});
 		
-		$scope.getProductList = function (categoryId){   
+		$scope.getProductList = function (categoryId){  
+			if(categoryId === parseInt($scope.taskProduct.categoryId)){
+				createAction('proper_category', null);
+			}
+			else{
+				createAction('wrong_category', null);
+			}
 			$http({method: 'GET', url: '../../../services/getProductsList.php?catId='+categoryId}).success(function(json) {
 				$scope.productData = json;
 				$('.drawer').drawer('close');
@@ -43,14 +52,50 @@
 	    $scope.checkProduct = function (productId){
 	    	if($scope.taskProduct !== {}){
 		    	if(productId === $scope.taskProduct.id){
-		    		console.log("gratki!");
-		    		$location.path( "/task" );
+		    		$scope.task.endDate = new Date().getTime();
+			    	$scope.task.succes = true;
+			    	$scope.task.actions = angular.copy($scope.taskActions);
+		    		var popup = $("#popup_succes");
+					$.fancybox.open([{
+			            type: 'inline',
+			            href: popup,
+			            closeClick  : false,
+			            closeBtn : false,
+				        helpers     : { 
+				          overlay : {closeClick: false}
+				        }
+			        }], {});
 		    	}
 		    	else{
-		    		
-		    		console.log('smuteczek: '+productId);
+		    		$scope.taskActions.push(createAction('wrong_product', null));
+			    	var popup = $("#popup_bad");
+					$.fancybox.open([{
+			            type: 'inline',
+			            href: popup,
+			            closeClick  : false,
+			            closeBtn : false,
+				        helpers     : { 
+				          overlay : {closeClick: false}
+				        }
+			        }], {});
 		    	}
 	    	}
 	    };
+
+	    $scope.completeTask = function (){
+	    	$.fancybox.close();
+	    	$(document).off();
+	    	$location.path( "/task" );
+	    }
+	    $scope.abortCurrentTask = function (){
+	    	$.fancybox.close();
+	    	$scope.task.endDate = new Date().getTime();
+	    	$scope.task.succes = false;
+	    	$(document).off();
+	    	$location.path( "/task" );
+	    }
+	    $scope.continueSearch = function (){
+	    	$.fancybox.close();
+	    }
   }]);
   
