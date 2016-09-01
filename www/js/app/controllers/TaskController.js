@@ -20,7 +20,7 @@
 	    
 	    $scope.start = function(){
 	    	$scope.task.startTime = new Date().getTime(); 
-    		$location.path( "/"+$scope.task.taskInterface );
+    		$location.path( "/"+$scope.task.taskInterface.name );
 	    }
   }]);
   

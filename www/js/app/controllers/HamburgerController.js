@@ -4,7 +4,7 @@
 		$scope.productData = [];
 		$scope.taskProduct = {};
 		$scope.taskActions = [];
-		
+		console.log(userService);
 		$scope.task = userService.tasks[userService.curentTask];
 		if($scope.task !== undefined){
 			$scope.taskProduct = userService.tasks[userService.curentTask].product;

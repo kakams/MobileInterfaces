@@ -3,7 +3,7 @@
 	    $scope.user = {};
 	    $scope.hand = '';
 	    $scope.device = '';
-	    var interfaces = ['hamburger', 'bottom_bar', 'desktop', 'wachlarz'];
+	    var interfaces = [{'name':'hamburger', 'id':0}, {'name':'bottom_bar', 'id':1}, {'name':'desktop', 'id':2}, {'name':'wachlarz', 'id':3}];
     	getRandProductList(interfaces.length);
     	
 	    function getRandProductList(amount){   
@@ -29,6 +29,7 @@
 	    	if($scope.hand !== '' && $scope.device !== '' && $scope.user !== {}){
 	    		$scope.user.device = $scope.device;
 	    		$scope.user.hand = $scope.hand;
+	    		$scope.user.addUserToDatabase();
 	    		$location.path( "/task" );
 	    	}
 	    	else{

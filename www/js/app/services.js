@@ -6,7 +6,7 @@
 	    }
 	    return this;
   });
-  app.factory('userService', ['$window', function($window) {
+  app.factory('userService', ['$window', '$http', function($window, $http) {
 	  
 	    var user = {
 	    		browser: '',
@@ -39,14 +39,42 @@
 	    };*/
 	    
 	    user.createUser = function (tasks){
+	    	user.id = -2;
 	    	user.browser = getBrowserName();
 	    	user.system = getSystemName();
 	    	user.createDate = new Date().getTime();
 	    	user.tasks = tasks;
+	    	user.device = '';
+	    	user.sex = '';
+	    	user.age = 0;
 	    	user.curentTask = -1;
+	    	user.hand = '';
 	    	return user;
 	    };
-		
+	    user.updateUserInDatabase = function(){
+	    	$http({method: 'POST', url: '../../services/updateUser.php?userId='+user.id+'&device='+user.device+'&age='+user.age+'&hand='+user.hand+'&sex='+user.sex}).success(function(data, status, headers, config){
+	    		console.log(data);
+	        });
+	    };
+
+	    user.addUserTasksToDatabase = function(){
+	    	var tasks = user.tasks;
+	    	for(var i = 0; i < tasks.length; i++){
+	    		$http({method: 'POST', url: '../../services/addUserTask.php?userId='+user.id+'&productId='+tasks[i].product.id+'&interfaceId='+tasks[i].taskInterface.id}).success(function(){
+	    			
+	    		});
+	    	}
+	    	
+	    };
+	    
+	    user.addUserToDatabase = function(){
+	    	$http({method: 'POST', url: '../../services/addUser.php?device='+user.device+'&browser='+user.browser+'&age='+user.age+'&system='+user.system+'&hand='+user.hand+'&sex='+user.sex+'&createdate='+user.createDate}).success(function(data, status, headers, config){
+	    		user.id = data;
+	    		user.addUserTasksToDatabase();
+	        });
+	    };
+	    
+	    
 	    function getSystemName(){
 	    	 var os = 'unknown';
 	         var nAgt = $window.navigator.userAgent;
