@@ -27,7 +27,7 @@ h1{
 }
 #startButton{
 	display:block;
-	width:80%;
+	width:90%;
 	height:70px;
 	font-size:14pt;
 	color:#000;
@@ -90,20 +90,26 @@ footer#mobile_footer ul li a:hover{
 }
 .answers{
 	display:table;
-	width:80%;
+	width:90%;
 	margin:0 auto;
 	margin-top:10px;
     box-sizing: border-box;
+    white-space: nowrap;
+    text-align:center;
 }
-.answers.horizontal{
-	table-layout:fixed;
-}
-.answers.horizontal .answer{
-	display:table-cell;
+.answers.horizontal .answer{    
+	display: inline-block;
+    width: 48%;
 	box-sizing:border-box;
 	text-align:center;
 	vertical-align:top;
-	border: 10px solid #fff;
+	border: 10px solid #e4e4e4;
+}
+.answers.horizontal .answer:first-of-type{
+	margin-right:2%;
+}
+.answers.horizontal .answer:last-of-type{
+	margin-left:2%;
 }
 .answers.horizontal .answer.selected{
 	border-color: #e59119;
@@ -111,7 +117,7 @@ footer#mobile_footer ul li a:hover{
 .answers.horizontal .answer .answer_text{
 	display:table;
 	width:100%;
-	padding:10px;
+	padding:10px 0;
 	box-sizing:border-box;
 	text-align:center;
 }

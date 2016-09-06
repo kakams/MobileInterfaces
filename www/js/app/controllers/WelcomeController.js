@@ -19,7 +19,7 @@
 	    		task = {};
 	    		task.taskInterface = interfaces[i];
 	    		task.product = products[i];
-	    		task.succes = false;
+	    		task.success = 0;
 	    		tasks.push(task);
 	    	}
 	    	return tasks;

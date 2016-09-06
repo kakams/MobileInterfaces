@@ -13,30 +13,12 @@
 	    		device: '',
 	    		system: '',
 	    		hand: '', 
+	    		sex: '', 
 	    		createDate: '',
-	    		curentTask: '',
+	    		curentTask: -1,
 	    		tasks: []
 	    };
-	    /*
 	    
-	    var task = {
-	    		taskInterface: '', //hamburger, bottom_bar, desktop, wachlarz
-	    		product: '',
-	    		startTime: '',
-	    		endTime: '',
-	    		actions: []
-	    }
-	    
-	    var action ={
-	    	type: '', //tap, first_tap, menu_tap, slide, first_menu_tap, buy_wrong_tap, succes_tap	
-	    	time: '',
-	    	screenWidth: '',
-	    	screenheight: '',
-	    	xPosition: '',
-	    	yPosition: '',
-	    	xFinishPosition: '',
-	    	yFinishPosition: ''
-	    };*/
 	    
 	    user.createUser = function (tasks){
 	    	user.id = -2;
@@ -53,18 +35,32 @@
 	    };
 	    user.updateUserInDatabase = function(){
 	    	$http({method: 'POST', url: '../../services/updateUser.php?userId='+user.id+'&device='+user.device+'&age='+user.age+'&hand='+user.hand+'&sex='+user.sex}).success(function(data, status, headers, config){
-	    		console.log(data);
+	    		
 	        });
 	    };
 
 	    user.addUserTasksToDatabase = function(){
-	    	var tasks = user.tasks;
-	    	for(var i = 0; i < tasks.length; i++){
-	    		$http({method: 'POST', url: '../../services/addUserTask.php?userId='+user.id+'&productId='+tasks[i].product.id+'&interfaceId='+tasks[i].taskInterface.id}).success(function(){
-	    			
-	    		});
-	    	}
+			angular.forEach(user.tasks, function(task, key) {
+				  $http({method: 'POST', url: '../../services/addUserTask.php?userId='+user.id+'&productId='+task.product.id+'&interfaceId='+task.taskInterface.id}).success(function(data){
+		    			task.taskId = data;
+		    	  });
+			});
 	    	
+	    };
+	    user.addTaskActionsToDatabase = function(){
+	    	if(user.curentTask >= 0 && user.curentTask < user.tasks.length){
+	    		
+		    	var actions = user.tasks[user.curentTask].actions;
+		    	
+		    	if(typeof actions !== 'undefined'){
+			    	for(var i = 0; i < actions.length; i++){
+			    		$http({method: 'POST', url: '../../services/addActionTask.php?taskId='+user.tasks[user.curentTask].taskId+'&type='+actions[i].type+'&time='+actions[i].time+'&screenWidth='+actions[i].screenWidth+'&screenHeight='+actions[i].screenHeight+'&xPosition='+actions[i].xPosition+'&yPosition='+actions[i].yPosition+'&xPositionFinish='+actions[i].xPositionFinish+'&yPositionFinish='+actions[i].yPositionFinish}).success(function(){
+			    			
+			    		});
+			    	}
+		    	}
+		    	user.updateTaskInDatabase(user.tasks[user.curentTask]);
+	    	}
 	    };
 	    
 	    user.addUserToDatabase = function(){
@@ -74,6 +70,11 @@
 	        });
 	    };
 	    
+	    user.updateTaskInDatabase = function(task){
+	    	$http({method: 'POST', url: '../../services/updateTask.php?taskId='+task.taskId+'&startTime='+task.startTime+'&endTime='+task.endTime+'&success='+task.success}).success(function(data, status, headers, config){
+
+	        });
+	    };
 	    
 	    function getSystemName(){
 	    	 var os = 'unknown';

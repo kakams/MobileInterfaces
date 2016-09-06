@@ -39,7 +39,7 @@ function desktopInfoBar(){
 
 
 function onAction(actions){
-	var menuOpenSelectors = ".drawer-hamburger, .desktop_menu_open, #menu_button";
+	var menuOpenSelectors = ".drawer-hamburger, .desktop_menu_open";
 	var menuItemSelectors = ".drawer-menu-item, .drawer-dropdown-menu-item, .bar_navigation_tab, .desktop_menu_tab, .wachlarz_tab";
 	
 
@@ -57,12 +57,17 @@ function onAction(actions){
 		actions.push(action);
 	});
 
-	
+
 	$(document).on('click', menuOpenSelectors , function(e){
+		var action = createAction('menu_toggle', e);
+		actions.push(action);
+	});
+	
+	$(document).on('click', '#menu_button' , function(e){
 		if (e.target !== this){
 	  	    return;
 	  	}
-		var action = createAction('menu_open', e);
+		var action = createAction('menu_toggle', e);
 		actions.push(action);
 	});
 	
