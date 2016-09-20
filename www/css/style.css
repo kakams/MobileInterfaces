@@ -25,7 +25,7 @@ h1{
 #instruction p{
 	padding-bottom:10px;
 }
-#startButton{
+.full_size_button{
 	display:block;
 	width:90%;
 	height:70px;
@@ -75,14 +75,29 @@ footer#mobile_footer ul li a:hover{
 	font-size:20px;
 	line-height:30px
 }
-#questions{
+.question{
     box-sizing: border-box;
-	padding-top:40px;
+	display:table;
+	width:100%;
+}
+.question span{
+	display: table-cell;
+	vertical-align: top;
+}
+.question span.question_number{
+	width:25px;
 }
 .single_question{
 	padding-top:20px;
-	padding-bottom:30px;
+	padding-bottom:50px;
     box-sizing: border-box;
+}
+.link{
+	text-decoration:underline;
+	color: #ec8500;
+}
+.single_question:first-of-type{
+	padding-top:0;
 }
 .question{
 	padding-bottom:20px;
@@ -100,6 +115,7 @@ footer#mobile_footer ul li a:hover{
 .answers.horizontal .answer{    
 	display: inline-block;
     width: 48%;
+    max-width: 240px;
 	box-sizing:border-box;
 	text-align:center;
 	vertical-align:top;
@@ -257,4 +273,104 @@ footer#mobile_footer ul li a:hover{
 }
 .ui-loader{
 	display:none;
+}
+ul.drag-drop{
+	list-style:none;
+    display: table-cell;
+    vertical-align:top;
+	margin:0 auto;
+    box-sizing: border-box;
+    padding:0;
+}
+.dragable_table{
+	width:100%;
+	display:table;
+	table-layout:fixed;
+}
+ul.drag-drop li{
+	display:table;
+	width:90%;
+    box-sizing: border-box;
+    padding: 0;
+    margin:0 auto;
+    background-color: #f7f7f7;
+    color: #313131;
+    font-size: 14px;
+}
+ul.drag-drop li:nth-of-type(2n){
+    background-color: #eaeaea;
+}
+ul.drag-drop li .img{
+	display:none;
+	width:30%;
+}
+ul.drag-drop li .img img{
+	width:100%;
+}
+ul.drag-drop li .text{    
+	display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    height: 50px;
+    box-sizing: border-box;
+    padding: 5px;
+}
+ul.drag-drop li .rate{
+	display:table-cell;
+	vertical-align:middle;
+	text-align:center;
+    width: 24px;
+	border-right:1px solid #fff;
+}
+ul.drag-drop li .content{
+	display:table-cell;
+	vertical-align:middle;
+	padding-left:5px;
+}
+.drag-drop-instruction {
+    font-size: 14px;
+    padding-bottom: 10px;
+    display: block;
+    text-align: center;
+}
+ul.drag-drop li > .dragging{
+    background-color: rgba(60, 60, 60, 0.34);
+    transform: scale(1.1);
+}
+ul.drop_area{
+	margin-top:20px;
+}
+span.reset_link {
+    display: table;
+    width: 95%;
+    margin: 0 auto;
+    text-align: right;
+    margin-top: 10px;
+    font-size: 13px;
+    text-decoration: underline;
+    color: #adadad;
+}
+.answers select, .answers input {
+    border: 10px solid #e4e4e4;
+    height: 60px;
+    background: #fff;
+    box-sizing: border-box;
+    text-align: center;
+}
+#finishThanks {
+    display: table-cell;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    text-align: center;
+    background-color: #e59119;
+}
+
+#finishThanks span{
+    display: block;
+    background-color: #ffffff;
+    color: #e59119;
+    font-size: 33px;
+    font-family: 'Kanit', sans-serif;
+    padding: 28px 0;
 }

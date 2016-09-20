@@ -1,18 +1,134 @@
  <div class="page_content">
-  	<h1>Ankieta</h1>
+  	<h1>Ankieta końcowa</h1>
   	
   	<div id="questions">
-	  	<div class="single_question best">
+	  	<div class="single_question">
 		  	<div class="question">
-		  		1) Proszę o uporządkowanie interfejsów z których korzystałeś / -łaś od najlepszego (1) do najgorszego (4):
-		  	<div class="answers vertical">
+		  		<span class="question_number">1)</span> <span>Jesteś mężczyzną, czy kobietą?</span>
+			</div>
+		  	<div class="answers horizontal">
 		  		
-			  	
+			  	<div class="answer" ng-class="{'selected': user.sex === 'woman'}" ng-click="setSex('woman')"> 
+			  		<span class="answer_text">Kobieta</span>
+			  		<img src="../../img/questions/woman.png" class="answer_img" alt="" />
+			  	</div>	
+			  	<div class="answer" ng-class="{'selected': user.sex === 'man'}" ng-click="setSex('man')">
+			  		<span class="answer_text">Mężczyzna</span>
+			  		<img src="../../img/questions/man.png" class="answer_img" alt="" />
+			  	</div>	
 		  	
 		  	</div>	
 	  	</div>
-  	</div>
+	  	
+	  	<div class="single_question">
+		  	<div class="question">
+		  		<span class="question_number">2)</span> <span>Jakie masz wykształcenie?</span>
+			</div>
+		  	<div class="answers">
+		  		
+			  	<select ng-options="item.value as item.text for item in educationOptions" placeholder='Wybierz swoje wykształcenie... ' ng-model="user.education">
+			  	
+			  	</select>
+		  	
+		  	</div>	
+		</div>
+		
+	  	<div class="single_question">
+		  	<div class="question">
+		  		<span class="question_number">3)</span> <span>Ile masz lat?</span>
+			</div>
+		  	<div class="answers">
+		  		
+		  		<input type="number" min-value="0" max-value="150" ng-model="user.age" placeholder='Podaj swój wiek...'/>
+			  	
+		  	
+		  	</div>	
+		</div>
+		
+		<div class="single_question">
+		  	<div class="question">
+		  		<span class="question_number"> 4)</span> <span>Proszę o ocenę innowacyjności interfejsów (1 - najbardziej innowacyjny). Jeśli nie pamiętasz interfejsów kliknij <span class="link">tutaj</a></span> 
+			</div>
+		  	<div class="answers_vertical">
+		  		
+		  		<span class="drag-drop-instruction" ng-show="innovationInterfaces.length > 0">Przeciągnij nazwy interfejsów do prawej tabeli</span>
+		  		<span class="drag-drop-instruction" ng-hide="innovationInterfaces.length > 0">Przeciągnij nazwy interfejsów aby wybrać pozycję</span>
+		        
+		        <div class="dragable_table">
+			  		<ul class="drag-drop draggable-objects" ng-show="innovationInterfaces.length > 0">
+			            <li  ng-repeat="obj in innovationInterfaces" >
+			                <div ng-drag="true" ng-drag-data="obj" data-allow-transform="true" class="text"> 
+			                	{{obj.text}}
+							</div>
+			            </li>
+			        </ul>
+			        
+			        <ul class="drag-drop drop_area">
+				
+				          <li ng-repeat="obj in innovationRatedInterfaces">
+				          	  
+				              <div class="rate">
+			                		{{$index + 1}}
+			                  </div>
+				              <div class="content" ng-drop="true" ng-drag="true" ng-drag-data="obj" ng-drop-success="onDropInnovationInterfaceComplete($index, $data, $event)"> 
+			                	
+			                	<div class="text">
+			                		{{obj.text}}
+			                	</div>
+							  </div>
+				          
+				          </li>
+				
+				    </ul>
+				    
+		  		</div>
+				    <span class="reset_link" ng-click="resetInnovation()">Resetuj wybór</span>
+			  	
+		  	</div>	
+		</div>
+		<div class="single_question">
+		  	<div class="question">
+		  		<span class="question_number">5)</span> <span>Proszę o uszeregowanie interfejsów od najlepszego do najgorszego (1 - najlepszy) </span> 
+			</div>
+		  	<div class="answers_vertical">
+		  		
+		  		<span class="drag-drop-instruction" ng-show="bestInterfaces.length > 0">Przeciągnij nazwy interfejsów do prawej tabeli</span>
+		  		<span class="drag-drop-instruction" ng-hide="bestInterfaces.length > 0">Przeciągnij nazwy interfejsów aby wybrać pozycję</span>
+		        
+		        <div class="dragable_table">
+			  		<ul class="drag-drop draggable-objects" ng-show="bestInterfaces.length > 0">
+			            <li  ng-repeat="obj in bestInterfaces" >
+			                <div ng-drag="true" ng-drag-data="obj" data-allow-transform="true" class="text"> 
+			                	{{obj.text}}
+							</div>
+			            </li>
+			        </ul>
+			        
+			        <ul class="drag-drop drop_area">
+				
+				          <li ng-repeat="obj in bestRatedInterfaces">
+				              <div class="rate">
+			                		{{$index + 1}}
+			                  </div>
+				              <div class="content" ng-drop="true" ng-drag="true" ng-drag-data="obj" ng-drop-success="onDropBestInterfaceComplete($index, $data, $event)"> 
+			                	<div class="text">
+			                		{{obj.text}}
+			                	</div>
+							  </div>
+				          
+				          </li>
+				
+				    </ul>
+		  		</div>
+				    <span class="reset_link" ng-click="resetBest()">Resetuj wybór</span>
+			  	
+		  	</div>	
+		</div>
   	
   	
+  </div>
+  
+  <div class="full_size_button" ng-click="sendForm()">
+		Zapisz
   </div>
   

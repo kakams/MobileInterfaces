@@ -20,6 +20,9 @@
 	    		task.taskInterface = interfaces[i];
 	    		task.product = products[i];
 	    		task.success = 0;
+	    		task.bestRate = -1;
+	    		task.innovationRate = -1;
+	    		task.comment = '';
 	    		tasks.push(task);
 	    	}
 	    	return tasks;

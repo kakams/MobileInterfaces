@@ -4,9 +4,14 @@
 		$scope.productData = [];
 		$scope.taskActions = [];
 		$scope.addRotate = 0;
-		if(userService.hand === 'left'){
-			$scope.addRotate = 90;
+		$scope.mull = 1;
+		$scope.hand = userService.hand;
+		if($scope.hand === 'left'){
+			//\\$scope.addRotate = 90;
+			$scope.mull = -1;
 		}
+		
+	    
 		$scope.taskProduct = {};
 		$scope.task = userService.tasks[userService.curentTask];
 		if($scope.task !== undefined){
@@ -73,13 +78,20 @@
 			var maxAngle = 90;
 			var angle = maxAngle / length;
 			var rotate = startAngle+angle*index;
-			var skew = 90-angle;
+			if($scope.hand === 'left'){
+				startAngle = -90;
+				rotate = startAngle+angle*(index+1);
+			}
+			var skew = $scope.mull *(90-angle);
 			var step = menuSize/4;
 			var size = menuSize - stepIndex*step;
+
+			
+			
 			return { 
 				width: size+"px",
 				height: size+"px",
-				transform: "rotate("+(rotate + $scope.addRotate)+"deg) skew("+skew+"deg)"
+				transform: "rotate("+(rotate)+"deg) skew("+skew+"deg)"
 			}
 		}
 		$scope.getUlStyle = function(stepIndex){
@@ -111,29 +123,50 @@
 			var startAngle = 0;
 			var maxAngle = 90;
 			var angle = maxAngle / length;
-			var rotate = startAngle+angle*index;
-			var skew = 90-angle;
+			var rotate = $scope.mull *(startAngle+angle*index);
+			var skew = $scope.mull *(90-angle);
 			var minusSkew = (-1)*skew;
-			var rotateSkew = (-1)*angle/2 - skew;
+			var rotateSkew = $scope.mull *(-1)*angle/2 - skew;
 			var step = menuSize/4;
 			var size = menuSize - stepIndex*step;
 			
-			return { 
-				width: 2*size+"px",
-				height: 2*size+"px",
-				bottom: (-1)*size+"px",
-				right: (-1)*size+"px",
-				transform: "skew("+minusSkew+"deg) rotate("+rotateSkew+"deg) scale(1)"
+			if($scope.hand === 'left'){
+				return { 
+					width: 2*size+"px",
+					height: 2*size+"px",
+					bottom: (-1)*size+"px",
+					left: (-1)*size+"px",
+					transform: "skew("+minusSkew+"deg) rotate("+rotateSkew+"deg) scale(1)"
+				}
+			}
+			else{
+				return { 
+					width: 2*size+"px",
+					height: 2*size+"px",
+					bottom: (-1)*size+"px",
+					right: (-1)*size+"px",
+					transform: "skew("+minusSkew+"deg) rotate("+rotateSkew+"deg) scale(1)"
+				}
 			}
 		}
 		$scope.getMenuButtonBGStyle = function(menuSize){
 			var size = menuSize/2;
 			var halfSize = size/2;
-			return { 
-				width: size,
-				height: size,
-				bottom: "-"+halfSize+"px",
-				right: "-"+halfSize+"px"
+			if($scope.hand === 'left'){
+				return { 
+					width: size,
+					height: size,
+					bottom: "-"+halfSize+"px",
+					left: "-"+halfSize+"px"
+				}
+			}
+			else{
+				return { 
+					width: size,
+					height: size,
+					bottom: "-"+halfSize+"px",
+					right: "-"+halfSize+"px"
+				}
 			}
 		}
 		$scope.getMenuButtonStyle = function(menuSize){
@@ -141,13 +174,25 @@
 			var halfSize = size/2;
 			var buttonSize = halfSize*0.6;
 			var position = halfSize*0.1;
-			return { 
-				'width': buttonSize+"px",
-				'height': buttonSize+"px",
-				'line-height': buttonSize*0.67+"px",
-				'bottom': position+"px",
-				'right': position+"px"
+			if($scope.hand === 'left'){
+				return { 
+					'width': buttonSize+"px",
+					'height': buttonSize+"px",
+					'line-height': buttonSize*0.67+"px",
+					'bottom': position+"px",
+					'left': position+"px"
+				}
 			}
+			else{
+				return { 
+					'width': buttonSize+"px",
+					'height': buttonSize+"px",
+					'line-height': buttonSize*0.67+"px",
+					'bottom': position+"px",
+					'right': position+"px"
+				}
+			}
+			
 		}
 		
 	  $scope.getMenuItems = function(elementId){

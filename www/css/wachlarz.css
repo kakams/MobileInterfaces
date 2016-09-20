@@ -56,6 +56,7 @@
 #menu_wachlarz{
 	display:table;
 }
+
 #menu_wachlarz #menu_button_bg{
 	border-radius: 50%;
 	width: 300px;
@@ -69,8 +70,16 @@
     background-repeat: no-repeat;
     background-size: contain;
 }
+#menu_wachlarz.left_hand #menu_button_bg{
+    background-image: url(../img/wachlarz_menu_left_bg.png);    
+}
+
 #menu_wachlarz #menu_button_bg.open{
     background-image: url(../img/wachlarz_menu_bg_close.png);    
+}
+
+#menu_wachlarz.left_hand #menu_button_bg.open{
+    background-image: url(../img/wachlarz_menu_left_bg_close.png);    
 }
 #menu_wachlarz #menu_button{
 	width: 100px;
@@ -111,7 +120,10 @@
     overflow:hidden;
     margin:0;
     transform:scale(0);
-	transform-origin:right bottom;
+}
+#menu_wachlarz.left_hand .css_menu{
+    right:initial;
+    left:0;
 }
 #menu_wachlarz .css_menu li{
     position: absolute;
@@ -122,6 +134,13 @@
     right: 0;
     overflow: hidden;
     border:none;
+}
+
+#menu_wachlarz.left_hand  .css_menu li{
+    right:initial;
+    left:0;
+    -webkit-transform-origin: 0% 100%;
+    transform-origin: 0% 100%;
 }
 #menu_wachlarz .css_menu li > span{
     display: table;

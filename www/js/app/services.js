@@ -28,20 +28,21 @@
 	    	user.tasks = tasks;
 	    	user.device = '';
 	    	user.sex = '';
-	    	user.age = 0;
+	    	user.age = null;
+	    	user.education = '';
 	    	user.curentTask = -1;
 	    	user.hand = '';
 	    	return user;
 	    };
 	    user.updateUserInDatabase = function(){
-	    	$http({method: 'POST', url: '../../services/updateUser.php?userId='+user.id+'&device='+user.device+'&age='+user.age+'&hand='+user.hand+'&sex='+user.sex}).success(function(data, status, headers, config){
+	    	$http({method: 'POST', url: '../../services/updateUser.php?userId='+user.id+'&device='+user.device+'&age='+user.age+'&hand='+user.hand+'&sex='+user.sex+'&education='+user.education}).success(function(data, status, headers, config){
 	    		
 	        });
 	    };
 
 	    user.addUserTasksToDatabase = function(){
 			angular.forEach(user.tasks, function(task, key) {
-				  $http({method: 'POST', url: '../../services/addUserTask.php?userId='+user.id+'&productId='+task.product.id+'&interfaceId='+task.taskInterface.id}).success(function(data){
+				  $http({method: 'POST', url: '../../services/addUserTask.php?userId='+user.id+'&productId='+task.product.id+'&interfaceId='+task.taskInterface.id+'&bestRate='+task.bestRate+'&innovationRate='+task.innovationRate}).success(function(data){
 		    			task.taskId = data;
 		    	  });
 			});
@@ -71,7 +72,7 @@
 	    };
 	    
 	    user.updateTaskInDatabase = function(task){
-	    	$http({method: 'POST', url: '../../services/updateTask.php?taskId='+task.taskId+'&startTime='+task.startTime+'&endTime='+task.endTime+'&success='+task.success}).success(function(data, status, headers, config){
+	    	$http({method: 'POST', url: '../../services/updateTask.php?taskId='+task.taskId+'&startTime='+task.startTime+'&endTime='+task.endTime+'&success='+task.success+'&bestRate='+task.bestRate+'&innovationRate='+task.innovationRate}).success(function(data, status, headers, config){
 
 	        });
 	    };
