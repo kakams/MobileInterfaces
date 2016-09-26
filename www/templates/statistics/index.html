@@ -1,0 +1,175 @@
+ <div class="page_content">
+  	
+  	<div class="charts">
+	  	<div class="chartTitle">Tasks times</div>
+	  	<div class="chartContent">
+		  	<div class="singleChart">
+		  		<div class="singleChartTitle">
+		  			Hamburger menu:
+		  		</div>
+		  		<div class="singleChartContent">
+		  			{{hamburgerTimes}}
+		  			</br>
+		  			{{getAvarage(hamburgerTimes)}}
+		  		</div>
+		  	</div>
+		  	<div class="singleChart">
+		  		<div class="singleChartTitle">
+		  			Bottom Bar menu:
+		  		</div>
+		  		<div class="singleChartContent">
+		  			{{barTimes}}
+		  			</br>
+		  			{{getAvarage(barTimes)}}
+		  		</div>
+		  	</div>
+		  	<div class="singleChart">
+		  		<div class="singleChartTitle">
+		  			Desktop menu:
+		  		</div>
+		  		<div class="singleChartContent">
+		  			{{desktopTimes}}
+		  			</br>
+		  			{{getAvarage(desktopTimes)}}
+		  		</div>
+		  	</div>
+		  	<div class="singleChart">
+		  		<div class="singleChartTitle">
+		  			Wachlarz menu:
+		  		</div>
+		  		<div class="singleChartContent">
+		  			{{wachlarzTimes}}
+		  			</br>
+		  			{{getAvarage(wachlarzTimes)}}
+		  		</div>
+		  	</div>
+		  	<div class="singleChart">
+		  		<div class="singleChartTitle">
+		  			Razem:
+		  		</div>
+		  		<div class="singleChartContent">
+		  			<canvas id="bar" class="chart chart-bar" chart-options="options"
+					  chart-data="[getAvarage(hamburgerTimes),getAvarage(barTimes),getAvarage(desktopTimes),getAvarage(wachlarzTimes)]" chart-labels="['Hamburger', 'Bottom Bar', 'Desktop', 'Wachlarz']" chart-series="">
+					</canvas>
+		  		</div>
+		  	</div>
+	  	
+	  	</div>
+  	</div>
+  	
+  	<div class="charts">
+	  	<div class="chartTitle">Tasks actions</div>
+	  	<div class="chartContent">
+		  	<div class="singleChart">
+		  		<div class="singleChartTitle">
+		  			Hamburger menu:
+		  		</div>
+		  		<div class="singleChartContent">
+		  			{{hamburgerActions}}
+		  		</div>
+		  	</div>
+		  	<div class="singleChart">
+		  		<div class="singleChartTitle">
+		  			Bottom Bar menu:
+		  		</div>
+		  		<div class="singleChartContent">
+		  			{{barActions}}
+		  		</div>
+		  	</div>
+		  	<div class="singleChart">
+		  		<div class="singleChartTitle">
+		  			Desktop menu:
+		  		</div>
+		  		<div class="singleChartContent">
+		  			{{desktopActions}}
+		  		</div>
+		  	</div>
+		  	<div class="singleChart">
+		  		<div class="singleChartTitle">
+		  			Wachlarz menu:
+		  		</div>
+		  		<div class="singleChartContent">
+		  			{{wachlarzActions}}
+		  		</div>
+		  	</div>
+	  	
+	  	</div>
+  	</div>
+  	<div class="charts">
+	  	<div class="chartTitle">Menu find times</div>
+	  	<div class="chartContent">
+		  	<div class="singleChart">
+		  		<div class="singleChartTitle">
+		  			Hamburger menu:
+		  		</div>
+		  		<div class="singleChartContent">
+		  			{{hamburgerMenuFindTimes}}
+		  		</div>
+		  	</div>
+		  	<div class="singleChart">
+		  		<div class="singleChartTitle">
+		  			Bottom Bar menu:
+		  		</div>
+		  		<div class="singleChartContent">
+		  			{{barMenuFindTimes}}
+		  		</div>
+		  	</div>
+		  	<div class="singleChart">
+		  		<div class="singleChartTitle">
+		  			Desktop menu:
+		  		</div>
+		  		<div class="singleChartContent">
+		  			{{desktopMenuFindTimes}}
+		  		</div>
+		  	</div>
+		  	<div class="singleChart">
+		  		<div class="singleChartTitle">
+		  			Wachlarz menu:
+		  		</div>
+		  		<div class="singleChartContent">
+		  			{{wachlarzMenuFindTimes}}
+		  		</div>
+		  	</div>
+	  	
+	  	</div>
+  	</div>
+  	<div class="charts">
+	  	<div class="chartTitle">Menu find actions</div>
+	  	<div class="chartContent">
+		  	<div class="singleChart">
+		  		<div class="singleChartTitle">
+		  			Hamburger menu:
+		  		</div>
+		  		<div class="singleChartContent">
+		  			{{hamburgerActionsToMenuFind}}
+		  		</div>
+		  	</div>
+		  	<div class="singleChart">
+		  		<div class="singleChartTitle">
+		  			Bottom Bar menu:
+		  		</div>
+		  		<div class="singleChartContent">
+		  			{{barActionsToMenuFind}}
+		  		</div>
+		  	</div>
+		  	<div class="singleChart">
+		  		<div class="singleChartTitle">
+		  			Desktop menu:
+		  		</div>
+		  		<div class="singleChartContent">
+		  			{{desktopActionsToMenuFind}}
+		  		</div>
+		  	</div>
+		  	<div class="singleChart">
+		  		<div class="singleChartTitle">
+		  			Wachlarz menu:
+		  		</div>
+		  		<div class="singleChartContent">
+		  			{{wachlarzActionsToMenuFind}}
+		  		</div>
+		  	</div>
+	  	
+	  	</div>
+  	</div>
+ </div>
+  

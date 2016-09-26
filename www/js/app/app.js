@@ -1,4 +1,4 @@
-var app = angular.module('mobileInterfaces', ['ngDraggable', 'ngRoute']).config(
+var app = angular.module('mobileInterfaces', ['ngDraggable', 'ngRoute', 'chart.js']).config(
 ['$routeProvider', function ($routeProvider) {
     $routeProvider.
     when('/desktop', {
@@ -29,8 +29,13 @@ var app = angular.module('mobileInterfaces', ['ngDraggable', 'ngRoute']).config(
         templateUrl: '../../templates/end/index.html',
         controller: 'QuestionsController'
     }).
+    when('/statistics', {
+        templateUrl: '../../templates/statistics/index.html',
+        controller: 'StatisticsController'
+    }).
     otherwise({
         templateUrl: '../../templates/welcome_page/index.html',
         controller: "WelcomeController"
     });
 }]);
+
