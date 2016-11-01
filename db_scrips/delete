@@ -1,0 +1,5 @@
+ DELETE FROM `Task_Action`
+ DELETE FROM `Client_Task`
+ DELETE FROM `Action`
+ DELETE FROM `Task`
+ DELETE FROM `Client`

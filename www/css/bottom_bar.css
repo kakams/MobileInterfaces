@@ -25,8 +25,6 @@
 	margin-bottom: 10px;
 }
 
-
-
 #site_conteiner_bar #product_list{
 	margin-top:20px;
 }
@@ -34,11 +32,6 @@
 	display: table;
 	width: 90%;
 	margin: 0 auto;
-}
-#site_conteiner_bar #promocje, #site_conteiner_bar #polecane{
-	height: 400px;
-	background: #808080;
-	margin: 30px;
 }
 #site_conteiner_bar #baner{
 	width: 100%;
@@ -67,12 +60,15 @@
 }
 #bar_navigation .bar_navigation_tab{
 	display:table-cell;
-	height:40px;
+	height:60px;
 	text-align:center;
 	vertical-align:middle;
 	border-right:1px solid #fff;
 	padding-left:5px;
 	padding-right:5px;
+}
+#bar_navigation .bar_navigation_tab:last-of-type{
+	border-right:0;
 }
 #bar_navigation .bar_navigation_tab .menu_img{
 	height:40%;
@@ -89,5 +85,5 @@
 	border-right:1px none;
 }
 #site_conteiner_bar footer#mobile_footer ul{
-	padding-bottom:60px;
+	padding-bottom:80px;
 }

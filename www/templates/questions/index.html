@@ -44,11 +44,41 @@
 		  	
 		  	</div>	
 		</div>
-		
+		<div class="single_question" fancybox>
+		  	<div class="question">
+		  		<span class="question_number"> </span> <span class="bold">Ostatnie dwa pytania będą dotyczyły oceny interfejsów. 
+		  		<p><span class="interfsces_link" ng-click="openFancybox()">Jeśli nie pamiętasz interfejsów kliknij tutaj</span></p></span>
+			</div>
+			
+	  		<div class="interfaces_helper_galery" ng-show="interfacesHelper">
+	  			<div class="teble-row">
+			  		<a class="fancybox-thumb fancybox-thumb-hamburger" rel="fancybox-thumb" href="../../img/screenshots/hamburger.png" title="Hamburger menu (#1)">
+							<img src="../../img/screenshots/hamburger.png" alt="Hamburger menu (#1)"/>
+							<div class="title"><span class="number">(#1)</span><span class="title_cont">Hamburger menu</span></div>
+					</a>
+			  		<a class="fancybox-thumb" rel="fancybox-thumb" href="../../img/screenshots/bottom_bar.png" title="Bottom Bar menu (#2)">
+							<img src="../../img/screenshots/bottom_bar.png" alt="Bottom Bar menu (#2)"/>
+							<div class="title"><span class="number">(#2)</span><span class="title_cont">Bottom Bar menu</span></div>
+					</a>
+				</div>
+	  			<div class="teble-row">
+			  		<a class="fancybox-thumb" rel="fancybox-thumb" href="../../img/screenshots/desktop.png" title="Desktop menu (#3)">
+							<img src="../../img/screenshots/desktop.png" alt="Desktop menu (#3)"/>
+							<div class="title"><span class="number">(#3)</span><span class="title_cont">Desktop menu</span></div>
+					</a>
+			  		<a class="fancybox-thumb" rel="fancybox-thumb" href="../../img/screenshots/wachlarz.png" title="Wachlarz menu (#4)">
+							<img src="../../img/screenshots/wachlarz.png" alt="Wachlarz menu (#4)"/>
+							<div class="title"><span class="number">(#4)</span><span class="title_cont">Wachlarz menu</span></div>
+					</a>
+				</div>
+			</div>
+		</div>
 		<div class="single_question">
 		  	<div class="question">
-		  		<span class="question_number"> 4)</span> <span>Proszę o ocenę innowacyjności interfejsów (1 - najbardziej innowacyjny). Jeśli nie pamiętasz interfejsów kliknij <span class="link">tutaj</a></span> 
+		  		<span class="question_number"> 4)</span> <span>Proszę o ocenę innowacyjności interfejsów (1 - najbardziej innowacyjny). 
+		  		
 			</div>
+			
 		  	<div class="answers_vertical">
 		  		
 		  		<span class="drag-drop-instruction" ng-show="innovationInterfaces.length > 0">Przeciągnij nazwy interfejsów do prawej tabeli</span>
@@ -88,8 +118,9 @@
 		</div>
 		<div class="single_question">
 		  	<div class="question">
-		  		<span class="question_number">5)</span> <span>Proszę o uszeregowanie interfejsów od najlepszego do najgorszego (1 - najlepszy) </span> 
+		  		<span class="question_number">5)</span> <span>Proszę o uszeregowanie interfejsów od najlepszego do najgorszego (1 - najlepszy)
 			</div>
+			
 		  	<div class="answers_vertical">
 		  		
 		  		<span class="drag-drop-instruction" ng-show="bestInterfaces.length > 0">Przeciągnij nazwy interfejsów do prawej tabeli</span>
@@ -124,7 +155,7 @@
 			  	
 		  	</div>	
 		</div>
-  	
+  		
   	
   </div>
   

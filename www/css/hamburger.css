@@ -42,11 +42,7 @@
 #site_conteiner_hamburger .product_active #main_site_content{
 	margin-top:120px;
 }
-#site_conteiner_hamburger #promocje, #site_conteiner_hamburger #polecane{
-	height: 400px;
-	background: #808080;
-	margin: 30px;
-}
+
 
 #site_conteiner_hamburger #baner{
 	width: 100%;

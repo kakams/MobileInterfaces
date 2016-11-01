@@ -1,3 +1,4 @@
+var debug = false;
 function desktopInfoBar(){
 	var el;
 	
@@ -76,20 +77,38 @@ function onAction(actions){
 	    $.data(this, 'scrollTimer', setTimeout(function() {
 			var action = createAction('scroll', e);
 			actions.push(action);
-	    }, 250));
+	    }, 500));
 	});
 
 }
 function createAction(type, e){
+	
+	if(debug === true){
+		console.log(type);
+	}
+	
 	var action = {};
 	action.type = type;
-	action.time =  new Date().getTime(); 
 	action.screenWidth = window.innerWidth;
 	action.screenHeight = window.innerHeight;
-	
 	if(e !== null && type !== 'scroll'){
 		action.xPosition = e.pageX;
 		action.yPosition = e.pageY - $(window).scrollTop(); //position on screen
+	}
+	
+	action.time =  new Date().getTime(); 
+	
+	if(type === 'tap' || type === 'tap_menu_item'){
+		action.time = action.time - 5;
+	}
+	else if(type === 'menu_toggle'){
+		action.time = action.time + 5;
+	}
+	else if(type === 'wrong_category'){
+		action.time = action.time + 100;
+	}
+	else if(type === 'proper_category'){
+		action.time = action.time + 100;
 	}
 	return action;
 }

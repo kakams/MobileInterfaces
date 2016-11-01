@@ -36,11 +36,7 @@
 	margin: 0 auto;
     margin-top: 10px;
 }
-#site_conteiner_wachlarz #promocje, #site_conteiner_wachlarz #polecane{
-	height: 400px;
-	background: #808080;
-	margin: 30px;
-}
+
 #site_conteiner_wachlarz #baner{
 	width: 100%;
 	display: table;

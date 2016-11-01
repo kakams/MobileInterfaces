@@ -68,7 +68,7 @@ $conn = new mysqli("localhost", "20454239_1", "981235ka", "20454239_1");
 					'actions'=>[]
 			];
 		}if(!isset($data[$idClient]['tasks'][$idTask]['actions'][$idAction])) {
-			$data[$idClient]['tasks'][$idTask]['actions'][$idAction] = [
+			$data[$idClient]['tasks'][$idTask]['actions'][] = [
 					'type'=>$row['type'],
 					'time'=>$row['time'],
 					'screenWidth'=>$row['screenWidth'],

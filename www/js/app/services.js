@@ -175,3 +175,36 @@
 	        });
 	    }
 	});
+  
+  app.directive('fancybox', function ($compile, $http) {
+	    return {
+	        restrict: 'A',
+
+	        controller: function($scope) {
+	        	 $scope.interfacesHelper= false;
+	             $scope.openFancybox = function () {
+
+	            	 if($scope.interfacesHelper){
+	            		 $scope.interfacesHelper = false;
+	            	 }
+	            	 else{
+	            		 $scope.interfacesHelper = true;
+	            	 }
+	            	 $(".fancybox-thumb").fancybox({
+	            			prevEffect	: 'none',
+	            			nextEffect	: 'none',
+	            			helpers	: {
+	            				title	: {
+	            					type: 'outside'
+	            				},
+	            				thumbs	: {
+	            					width	: 50,
+	            					height	: 50
+	            				}
+	            			}
+	            	});
+	            	 
+	             }
+	         }
+	     };
+  });

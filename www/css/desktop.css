@@ -109,11 +109,7 @@
 	width: 90%;
 	margin:0 auto;
 }
-#site_conteiner_desktop #promocje, #site_conteiner_desktop #polecane{
-	height: 400px;
-	background: #808080;
-	margin: 30px 0;
-}
+
 #site_conteiner_desktop #baner{
 	width: 100%;
 	display: table;

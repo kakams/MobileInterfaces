@@ -1,4 +1,4 @@
-<div id="product_tf" ng-show="task.product" ng-include="'../../include_components/product-info.html'">
+<div id="product_tf" ng-show="task.product" ng-include="'../templates/include_components/product-info.html'">
 </div>
 	  
 <div id="site_conteiner_wachlarz" ng-class="{'product_active': task.product}">
@@ -11,14 +11,64 @@
 		 	 <img src="../../img/baner.png" />
 		  </div>
 		  
-		  <div id="promocje">
-		  </div>
-		  
-		  <div id="polecane">
-		  </div>
+		  <div id="promocje" class="promo">
+			  	<div class="section_title">Promocje</div>
+			  	<div class="single_pro_first">
+			  		<div class="img" style="background-image:url(../../../img/products/431/8.jpg)"></div>
+			  		<div class="cont">
+				  		<div class="tittle">Kosz samołapacz</div>
+				  		<div class="price">35,99<span>zł</span></div>
+			  		</div>
+			  	</div>
+			  	<div class="pro_row">
+				  	<div class="single_pro">
+				  		<div class="img" style="background-image:url(../../../img/products/313/5.jpg)"></div>
+				  		<div class="tittle">Kanapa skórzana super sit</div>
+				  		<div class="price">531,99<span>zł</span></div>
+				  	</div>
+				  	<div class="single_pro">
+				  		<div class="img" style="background-image:url(../../../img/products/512/6.jpg)"></div>
+				  		<div class="tittle">Duży samochód</div>
+				  		<div class="price">220000,99<span>zł</span></div>
+				  	</div>
+				  	<div class="single_pro">
+				  		<div class="img" style="background-image:url(../../../img/products/611/1.jpg)"></div>
+				  		<div class="tittle">Film Maszmix</div>
+				  		<div class="price">19,99<span>zł</span></div>
+				  	</div>
+			  	</div>
+			  </div>
+			  
+			  <div id="polecane" class="promo">
+			  	<div class="section_title">Polecane dla Ciebie</div>
+			  	<div class="single_pro_first">
+			  		<div class="img" style="background-image:url(../../../img/products/421/8.jpg)"></div>
+			  		<div class="cont">
+				  		<div class="tittle">Rower automatyczny "pedał"</div>
+				  		<div class="price">3500,99<span>zł</span></div>
+			  		</div>
+			  	</div>
+			  	<div class="pro_row">
+				  	<div class="single_pro">
+				  		<div class="img" style="background-image:url(../../../img/products/233/5.jpg)"></div>
+				  		<div class="tittle">Gumowce nieprzemakajki</div>
+				  		<div class="price">199,99<span>zł</span></div>
+				  	</div>
+				  	<div class="single_pro">
+				  		<div class="img" style="background-image:url(../../../img/products/432/6.jpg)"></div>
+				  		<div class="tittle">Rękawice obronne</div>
+				  		<div class="price">220000,99<span>zł</span></div>
+				  	</div>
+				  	<div class="single_pro">
+				  		<div class="img" style="background-image:url(../../../img/products/531/1.jpg)"></div>
+				  		<div class="tittle">Duży ciągnik</div>
+				  		<div class="price">399000,99<span>zł</span></div>
+				  	</div>
+			  	</div>
+			  </div>
 		  
 	  </div>
-	  <div id="product_list" class="mobile" ng-show="productData.length > 0" ng-include="'../../include_components/product-item.html'">
+	  <div id="product_list" class="mobile" ng-show="productData.length > 0" ng-include="'../templates/include_components/product-item.html'">
 	  </div>
 	  
 	  <footer id="mobile_footer" class="wachlarz_footer" >
@@ -30,10 +80,9 @@
 	  	</ul>
 	  </footer>
 	  
-	 <div id="popups" ng-include="'../../include_components/popup-content.html'">
+	 <div id="popups" ng-include="'../templates/include_components/popup-content.html'">
 	 </div>
 	</div>
-	{{hand}}
   	<div id="menu_wachlarz" ng-class="{'left_hand': hand==='left'}">
   		<div id="overlay"></div>
 	 	 <ul id="css_menu{{$index}}" class="css_menu" ng-style="getUlStyle($index)" 

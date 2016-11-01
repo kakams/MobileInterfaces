@@ -1,8 +1,8 @@
-  app.controller('QuestionsController', ['$scope', '$location', '$http', 'userService', function($scope,$location, $http, userService) {	
+  app.controller('QuestionsController', ['$scope', '$window','$location', '$http', 'userService', function($scope,$window,$location, $http, userService) {	
 
 		$scope.user = userService;
 		$scope.tasks = userService.tasks;
-
+			
 		$scope.bestError = false;
 		$scope.innovationError = false;
 		
@@ -15,10 +15,10 @@
 		];
 		$scope.education = $scope.user.education;
 		$scope.interfaces = [
-		    {text: 'Hamburger menu', value: 'hamburger', imgOpen: '../../../img/interfaces/hamburger_open.png', imgClose: '../../../img/interfaces/hamburger_close.png', coment: ""},
-			{text: 'Bottom bar menu', value: 'bottom_bar', imgOpen: '../../../img/interfaces/bottom_bar_open.png', imgClose: '../../../img/interfaces/bottom_bar_close.png', coment: ""},
-			{text: 'Interfejs desktopowy', value: 'desktop', imgOpen: '../../../img/interfaces/desktop_open.png', imgClose: '../../../img/interfaces/desktop_close.png', coment: ""},
-			{text: 'Menu \"Wachlarz\"', value: 'wachlarz', imgOpen: '../../../img/interfaces/wachlarz_open.png', imgClose: '../../../img/interfaces/wachlarz_close.png', coment: ""},
+		    {text: 'Hamburger menu (#1)', value: 'hamburger', imgOpen: '../../../img/interfaces/hamburger_open.png', imgClose: '../../../img/interfaces/hamburger_close.png', coment: ""},
+			{text: 'Bottom bar menu (#2)', value: 'bottom_bar', imgOpen: '../../../img/interfaces/bottom_bar_open.png', imgClose: '../../../img/interfaces/bottom_bar_close.png', coment: ""},
+			{text: 'Interfejs desktopowy (#3)', value: 'desktop', imgOpen: '../../../img/interfaces/desktop_open.png', imgClose: '../../../img/interfaces/desktop_close.png', coment: ""},
+			{text: 'Menu \"Wachlarz\" (#4)', value: 'wachlarz', imgOpen: '../../../img/interfaces/wachlarz_open.png', imgClose: '../../../img/interfaces/wachlarz_close.png', coment: ""},
 		];
 	    $scope.ratedInterfaces = [{},{},{},{}];
 	  
@@ -33,11 +33,12 @@
 		    $scope.innovationInterfaces = angular.copy($scope.interfaces);
 		    $scope.innovationRatedInterfaces = angular.copy($scope.ratedInterfaces);
 	    }
-	  
+
 	    $scope.resetBest = function(){
 		    $scope.bestInterfaces = angular.copy($scope.interfaces);
 		    $scope.bestRatedInterfaces = angular.copy($scope.ratedInterfaces);
 	    }
+	    
 	  
 	  $scope.onDropInnovationInterfaceComplete=function(index, data, evt){
 		  var indexFirst = $scope.innovationRatedInterfaces.indexOf(data);
@@ -130,6 +131,11 @@
 	    	}
 	    	
 	    }
+	    
+	    $scope.reload = function(){
+	    	$window.location.href = '/';
+	    }
+	    
 	    $scope.sendForm = function(){
 			$scope.innovationError = false;
 			$scope.bestError = false;
@@ -169,9 +175,8 @@
     			$scope.user.updateUserInDatabase();
 	    		$location.path( "/end" );
 	    	}
-	    	
-	    	console.log($scope.user);
 	    }
+	    
 	    function getTaskByInterfaceName(name){
 	    	var returnTask = null;
 	    	angular.forEach($scope.tasks, function(task, key) {
