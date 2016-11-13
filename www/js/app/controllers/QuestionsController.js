@@ -146,11 +146,11 @@
 	    			  task.bestRate = 4-key;
 	    		  }
 	    		  else{
-	    			  $scope.bestError = true;
+	    			  //$scope.bestError = true;
 	    		  }
 		      }
 		      else{
-    			  $scope.bestError = true;
+    			  //$scope.bestError = true;
 		      }
     		});
 	    	
@@ -161,11 +161,11 @@
 		    			  task.innovationRate = 4-key;
 		    		  }
 		    		  else{
-		    			  $scope.innovationError = true;
+		    			  //$scope.innovationError = true;
 		    		  }
 			      }
 			      else{
-	    			  $scope.innovationError = true;
+	    			  //$scope.innovationError = true;
 			      }
 	    		});
 	    	if($scope.bestError === false && $scope.innovationError === false && $scope.user.sex !== '' && $scope.user.education !== '' && $scope.user.age !== null){

@@ -89,6 +89,7 @@
 			            <li  ng-repeat="obj in innovationInterfaces" >
 			                <div ng-drag="true" ng-drag-data="obj" data-allow-transform="true" class="text"> 
 			                	{{obj.text}}
+			                		<div class="drag-drop-mask"></div>
 							</div>
 			            </li>
 			        </ul>
@@ -105,6 +106,8 @@
 			                	<div class="text">
 			                		{{obj.text}}
 			                	</div>
+			                	
+			                	<div class="drag-drop-mask"></div>
 							  </div>
 				          
 				          </li>
@@ -131,6 +134,7 @@
 			            <li  ng-repeat="obj in bestInterfaces" >
 			                <div ng-drag="true" ng-drag-data="obj" data-allow-transform="true" class="text"> 
 			                	{{obj.text}}
+			                	<div class="drag-drop-mask"></div>
 							</div>
 			            </li>
 			        </ul>
@@ -145,6 +149,7 @@
 			                	<div class="text">
 			                		{{obj.text}}
 			                	</div>
+			                	<div class="drag-drop-mask"></div>
 							  </div>
 				          
 				          </li>

@@ -316,7 +316,17 @@ ul.drag-drop li .text{
     width: 100%;
     height: 50px;
     box-sizing: border-box;
-    padding: 5px;
+    padding-left: 5px;
+    position:relative;
+}
+.drag-drop-mask {
+    display: table;
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index:100;
 }
 ul.drag-drop li .rate{
 	display:table-cell;
@@ -326,6 +336,7 @@ ul.drag-drop li .rate{
 	border-right:1px solid #fff;
 }
 ul.drag-drop li .content{
+    position:relative;
 	display:table-cell;
 	vertical-align:middle;
 	padding-left:5px;
